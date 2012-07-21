@@ -1,0 +1,79 @@
+/**
+ *  Created: 01/31/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* 
+----------------------------------------------------------------------------- */
+
+#contact-methods {
+	list-style-type: none;
+	margin-left: 2em;
+	overflow: hidden;
+	padding: 0;
+}
+
+#contact-methods .service {
+	color: #666;
+	font-style: italic;
+}
+
+#contact-methods sub {
+	color: #666;
+	font-size: .6154em;
+	font-style: italic;
+}
+
+#contact-methods > li {
+	border-bottom: 1px dotted #ccc;
+	float: left;
+	margin: 0 2em 1em 0;
+	min-height: 3em;
+	width: 21em;
+}
+
+#contact-methods .no-line {
+	border: none;
+}
+
+#contact-methods .email,
+#contact-methods .micro {
+	min-height: 4.4286em;
+}
+
+#contact-methods ul {
+	color: #000;
+	list-style-type: square;
+	padding-left: 1.75em;
+}
+
+#contact-methods ul li {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 0;
+}
+
+
+#contact-methods ul li em,
+#contact-methods ul li strong,
+#contact-methods ul li i,
+#contact-methods ul li b {
+	font-style: normal;
+	font-weight: normal;
+}
+

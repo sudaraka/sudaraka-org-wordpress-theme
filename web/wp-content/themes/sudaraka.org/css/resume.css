@@ -1,0 +1,108 @@
+/**
+ *  Created: 01/27/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* 
+----------------------------------------------------------------------------- */
+
+#body-content {
+	text-align: justify;
+	width: auto;
+}
+
+#body-content .page-sections a {
+	font-size: 1.125em;
+}
+
+#experience h4 {
+	margin-bottom: .125em;
+}
+
+#experience h4 small {
+	color: #444400;
+}
+
+#experience h4+p {
+	color: #554422;
+	margin-top: .125em;
+}
+
+#experience .sep {
+	clear: both;
+	border-bottom: 1px solid #ccc;
+}
+
+.wp-caption {
+	width: 98px !important;
+	text-align: center;
+}
+
+.wp-caption  img {
+	margin: 0 auto;
+}
+
+#body-content .wp-caption a:focus,
+#body-content .wp-caption a:hover {
+	border: none;
+}
+
+#skills th,
+#skills td {
+	margin: .25em;
+	padding: .5em;
+	text-align: center;
+}
+
+#skills small {
+	clear: right;
+	float: right;
+	color: #555522;
+	font-weight: normal;
+}
+
+#skills th {
+	color: #554422;
+}
+
+
+#skills td {
+	background-color: #d8d8d8;
+	border-radius: .5em;
+	font-size: .875em;
+	font-weight: bold;
+	line-height: 1.6923em;
+	width: 16.5em;
+}
+
+#skills td+td {
+	background-color: #e0e0e0;
+	font-weight: normal;
+}
+
+#skills td+td+td {
+	background-color: #e8e8e8;
+}
+
+
+#copyright {
+	color: #333;
+	font-size: .75em;
+	margin-top: 3em;
+}
+

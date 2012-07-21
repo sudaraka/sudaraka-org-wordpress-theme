@@ -1,0 +1,160 @@
+/**
+ *  Created: 01/20/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* 
+----------------------------------------------------------------------------- */
+
+.page-header {
+	border-bottom: 1px dotted #222233;
+	margin-bottom: 1em;
+	position: relative;
+}
+
+.page-header a {
+	color: #997711;
+}
+
+.page-title {
+	color: #777744;
+	font: italic bold 1.75em/1em 'Droid Serif', serif;
+	margin: .75em 0 .25em;
+}
+
+.category-archive-meta p {
+	color: #888866;
+	font: italic normal .875em/1.25em 'Droid Serif', serif;
+	margin: .5em 0;
+}
+
+.more-link {
+	clear: right;
+	color: #880000;
+	float: right;
+	font-size: 1em;
+}
+
+.nav-previous .more-link {
+	clear: left;
+	float: left;
+}
+
+.post {
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	position: relative;
+}
+
+.article-title {
+	clear: both;
+	color: #222;
+	font-size: 1.375em;
+	font-weight: bold;
+	line-height: 1.5em;
+	margin-bottom: 0;
+	padding-right: 2.0455em;
+}
+
+.article-title a {
+	color: #222;
+}
+
+.article-title a:focus,
+.article-title a:hover {
+	color: #660000;
+}
+
+.article-meta {
+	color: #666;
+}
+
+.article-meta a {
+	color: #333;
+}
+
+.article-meta a:focus,
+.article-meta a:hover {
+	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
+footer.article-meta .comments-link,
+footer.article-meta .leave-reply {
+	color:#6E8B56;
+}
+
+footer.article-meta .leave-reply {
+	font-weight: bold;
+}
+
+.article-header .comments-link a {
+	background: #eee url('../images/comment-bubble.png') no-repeat 0 0;
+	color: #666;
+	font-size: .8125em;
+	height: 2.7692em;
+	width: 3.3077em;
+	line-height: 2.6923em;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+
+.article-header .comments-link a:focus,
+.article-header .comments-link a:hover {
+	background-color: #6E8B56;
+	border: none;
+	color: rgba(255, 255, 255, .8);
+}
+
+.article-header .comments-link a .leave-reply {
+	visibility: hidden;
+}
+
+.article-header .article-meta {
+	padding-right: 8em;
+}
+
+.article-content a {
+	color: #997711;
+}
+
+.article-content .more-link {
+	color: #880000;
+	clear: none;
+	float: none;
+}
+
+.article-content .more-link:focus,
+.article-content .more-link:hover {
+	border-bottom: 1px dotted #880000;
+}
+
+.cat-links a {
+	color: #880000;
+}
+
+.feed-icon {
+	margin: .5em 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}

@@ -1,0 +1,311 @@
+/**
+ *  Created: 01/19/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Overrides for home page
+----------------------------------------------------------------------------- */
+
+/* Header styles
+----------------------------------------------------------------------------- */
+
+body {
+	background-position: 0 209px;
+}
+
+#site-header {
+	height: 16em;
+}
+
+#site-header .mug-shot {
+	height: 13.5em;
+	width: 13.75em;
+}
+
+#site-header .title {
+	font: italic bold 3.375em/1em 'Droid Serif', serif;
+	top: 2em;
+	left: 4.8148em;
+}
+
+#site-header .slogan {
+	font: italic normal 1.125em/1em 'Droid Serif', serif;
+	top: 1em;
+	left: 14.4444em;
+}
+
+/* Header menu */
+#menu-header-menu {
+	margin-top: 6em;
+	width: 13.75em;
+}
+
+#menu-header-menu>.menu-item+.menu-item {
+	font-size: .75em;
+	padding: 0 .6118em;
+}
+
+#menu-header-menu>.menu-item a {
+	padding-left: 0;
+}
+
+#menu-header-menu .about {
+	font-size: 1em;
+	font-weight: bold;
+	margin-left: 0;
+	text-align: center;
+}
+
+#menu-header-menu .sub-menu {
+}
+
+#menu-header-menu .sub-menu .menu-item {
+	background-position: 0 0;
+	height: 32px;
+	width: 32px;
+	margin: .5625em .1463em;
+}
+
+#menu-header-menu .sub-menu .identica {
+	background-position: -56px 0;
+}
+
+#menu-header-menu .sub-menu .fb {
+	background-position: -224px 0;
+}
+
+#menu-header-menu .sub-menu .ee {
+	background-position: -168px 0;
+}
+
+#menu-header-menu .sub-menu .twitter {
+	background-position: -112px 0;
+}
+
+#menu-header-menu .sub-menu .gitorious {
+	background-position: -280px 0;
+}
+
+/* Main menu */
+#menu-main-menu {
+	padding: 0 1.25em 0 .25em;
+	width: 43.5em;
+}
+
+#menu-main-menu .menu-item:nth-child(n+7) {
+	display: none;
+}
+
+#menu-main-menu .menu-item a {
+	padding: 0 .75em;
+}
+
+/* Body styles
+----------------------------------------------------------------------------- */
+
+#site-body {
+	margin-top: 16em;
+}
+
+#body-content {
+	overflow: visible;
+}
+
+/* Featured posts style
+----------------------------------------------------------------------------- */
+
+.front-page {
+	position: relative;
+}
+
+.featured-post {
+	border-radius: .5em;
+	float: left;
+	margin-left: .3125em;
+	padding: .5em;
+	width: 42.4375em;
+}
+.featured-post:nth-child(even) {
+	background-color: #eee;
+}
+
+.featured-post .article-title {
+	font-size: 1em;
+	line-height: 1.2em;
+	overflow: hidden;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.featured-post .article-title a {
+	color: #222;
+}
+
+.featured-post .article-title a:focus,
+.featured-post .article-title a:hover {
+	color: #660000;
+}
+
+.featured-post .article-content p {
+	color: #333;
+	font: normal .8125em/1.2308em 'Droid Sans', sans-serif;
+	margin: .25em 0;
+	text-align: justify;
+}
+
+.tag-logo {
+	padding-top: .5em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: -.9em;
+	min-height: 16.5em;
+	width: 4.5em;
+	text-align: center;
+}
+
+.tag-logo img {
+	margin: .5em 0;
+}
+
+.project-wrap {
+	background-color: #222;
+	border-radius: 0 0 .25em .25em;
+	box-shadow: 0 0 .25em rgba(68, 68, 68, .75);
+	color: #fff;
+	font-family: 'Droid Sans';
+	height: 16.5em;
+	width: 40em;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+}
+
+.homepage-content {
+	margin-top: 18em;
+	overflow: hidden;
+}
+
+.article-content {
+	clear: both;
+}
+
+.project-slideshow {
+	overflow: hidden;
+}
+
+.project-slideshow .post-title {
+	display: none;
+}
+
+.project-slideshow ul {
+	margin: 0;
+	padding: 0;
+}
+
+#body-content .project-slideshow .category-head-item {
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+.project-slideshow .category-head-item+.category-head-item {
+	display: none;
+}
+
+.project-slideshow p {
+	font: italic 1em/1.3061em 'Droid Serif', serif;
+	margin: 0;
+}
+
+#body-content .project-slideshow .size-full,
+#body-content .project-slideshow .size-medium {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	padding: 0;
+}
+
+.project-slideshow .more-link {
+	color: #ddd;
+	font: italic normal .8163em/1em 'Droid Serif', serif;
+	position: absolute;
+	right: .5em;
+	bottom: .25em;
+	text-decoration: none;
+}
+
+.project-slideshow .more-link:focus,
+.project-slideshow .more-link:hover {
+	border-bottom: none;
+	color: #fff;
+	text-shadow: 0 0 .125em #ffcc66;
+}
+
+.more-link {
+	color: #880000;
+}
+
+.more-link:focus,
+.more-link:hover {
+	border-bottom: 1px dotted #880000;
+}
+
+#menu-icon-menu .menu-item {
+	/*float: left;*/
+	margin: 0 auto 1em;
+	text-align: center;
+	text-indent: -9999px;
+}
+
+#menu-icon-menu .menu-item a {
+	display: block;
+	margin: 0 auto;
+}
+
+#menu-icon-menu .php a {
+	background: transparent url(../../../uploads/php-icon.png) no-repeat 0 0;
+	height: 32px;
+	width: 32px;
+}
+
+#menu-icon-menu .hanthana a {
+	background: transparent url(../../../uploads/hanthana.png) no-repeat 0 0;
+	height: 38px;
+	width: 32px;
+}
+
+#menu-icon-menu .gnulinux a {
+	background: transparent url(../../../uploads/gnulinux.png) no-repeat 0 0;
+	height: 38px;
+	width: 32px;
+}
+
+#menu-icon-menu .linux a {
+	background: transparent url(../../../uploads/penguin.png) no-repeat 0 0;
+	height: 38px;
+	width: 32px;
+}
+
+#menu-icon-menu .arch a {
+	background: transparent url(../../../uploads/archlinux-logo.png) no-repeat 0 0;
+	height: 30px;
+	width: 32px;
+}

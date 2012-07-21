@@ -1,0 +1,144 @@
+/**
+ *  Created: 01/21/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* 
+----------------------------------------------------------------------------- */
+
+.content-title {
+	font-size: 1.75em;
+	line-height: 1em;
+	margin: .75em 0 .25em;
+}
+
+.content-header {
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+#body-content a {
+	color: #997711;
+}
+
+#body-content a:focus,
+#body-content a:hover {
+	border-bottom: 1px dotted #444400;
+}
+
+.page-links {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	color: #222;
+	font-size: smaller;
+	line-height: 1.6923em;
+	list-style-type: none;
+	margin: 2em 0;
+	padding: 1em 1.5385em;
+}
+
+#body-content .page-links li {
+	font-size: 1em;
+	line-height: 1.6923em;
+	margin: 0;
+}
+
+.page-links .arrow {
+	color: #444400;
+	padding-right: 1em;
+}
+
+.page-sections {
+	clear: both;
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.page-sections li {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	float: left;
+	margin: 0 1em 0 0 !important;
+	position: relative;
+	overflow: hidden;
+}
+
+#body-content .page-sections a {
+	color: #333311;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: bold;
+	height: 100%;
+	padding: .5em;
+	position: relative;
+}
+
+#body-content .page-sections a:focus,
+#body-content .page-sections a:hover {
+	background-color: #333311;
+	border: none;
+	color: #fff;
+}
+
+.in-page-section {
+	margin-top: 1em;
+	overflow: hidden;
+	padding: .1em 0;
+}
+
+.highlighted-page-section {
+	background-color: #ededed;
+	border: 1px dotted #d3d3d3;
+	border-radius: .25em;
+	padding: .25em 2em .25em 1em;
+}
+
+.highlighted-page-section h2 {
+	margin-top: .5em;
+}
+
+.in-page-section  footer {
+	clear: both;
+	font-size: .6875em;
+	margin: .25em 0;
+	text-align: right;
+}
+
+#body-content .in-page-section  footer a {
+	color: #888;
+}
+
+#body-content .in-page-section  footer a:focus,
+#body-content .in-page-section  footer a:hover {
+	color: #000;
+}
+
+.flattr_button {
+	clear: left;
+	float: left;
+}
+
+.addthis_toolbox {
+	clear: right;
+	float: left;
+	margin-left: 1em;
+}

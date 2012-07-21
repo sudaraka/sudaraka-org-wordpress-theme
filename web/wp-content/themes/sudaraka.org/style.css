@@ -1,0 +1,686 @@
+/**
+ *  Theme Name: Sudaraka.Org
+ *  Theme URI: http://sudaraka.org/projects/open-source/sudaraka-org-theme/
+ *  Description: The default theme for Sudaraka.Org - Inspired by and some code borrowed from The "Twenty Eleven" theme of Wordpress. 
+ *  Author: Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *  Version: 1.0
+ *  License: GNU Affero General Public License
+ *  License URI: LICENSE
+ *  Tags:
+ *
+ *  
+ *  Created: 01/01/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Base styles
+----------------------------------------------------------------------------- */
+
+* {
+	outline: 0;
+}
+
+body {
+	background: #080808 url(images/site-bg.png) repeat-x 0 81px;
+	font: normal 100%/100% 'Droid Sans', sans-serif;
+	margin: 0;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}
+
+#body-content li,
+p {
+	color: #000;
+	font-size: .875em;
+	line-height: 1.4286em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+p {
+	margin: 1.2857em 0;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+	background: none repeat scroll 0 0 #FAFAFA;
+	border: 1px solid #DDD;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+	color: #888;
+	font: normal 1em/1em 'Droid Sans', sans-serif;
+}
+
+input[type="text"] {
+	padding: 3px;
+}
+
+input#s {
+	background: url('images/search.png') no-repeat scroll 5px 6px transparent;
+	border-radius: .5em;
+	font-size: 14px;
+	height: 22px;
+	line-height: 1.2em;
+	padding: 4px 10px 4px 28px;
+}
+
+abbr {
+	cursor: pointer;
+}
+
+img {
+	border: none;
+}
+
+/* Primary layout styles
+----------------------------------------------------------------------------- */
+
+#content-wraper {
+	margin: 0 auto;
+	min-height: 100%;
+	position: relative;
+	text-align: left;
+	width: 980px;
+}
+
+
+/* Header styles
+----------------------------------------------------------------------------- */
+
+#site-header {
+	height: 8em;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+}
+
+#site-header ::selection {
+	background-color: transparent;
+}
+
+#site-header ::-moz-selection {
+	background-color: transparent;
+}
+
+#site-header .mug-shot {
+	border-radius: 0 .5625em .5625em;
+	float: left;
+	height: 3.625em;
+	width: 3.75em;
+	position: absolute;
+	top: 1.125em;
+	left: 1.25em;
+}
+
+#site-header .title {
+	color: #ddd;
+	font: italic bold 2.25em/1em 'Droid Serif', serif;
+	margin: 0;
+	position: absolute;
+	top: 1em;
+	left: 2.7778em;
+	text-shadow: 0 0 .25em #8888ff;
+	width: 8.5185em;
+}
+
+#site-header .title:focus,
+#site-header .title:hover {
+	text-shadow: 0 0 .25em #ffcc66;
+}
+
+#site-header .slogan {
+	color: #888;
+	font: italic normal .875em/1.2857em 'Droid Serif', serif;
+	letter-spacing: .5em;
+	margin: 0;
+	position: absolute;
+	top: .5em;
+	left: 11.4444em;
+	text-align: center;
+	width: 38.8889em;
+}
+
+/* Header menu */
+#menu-header-menu {
+	float: right;
+	margin: .875em 1.25em 0;
+	width: 11.75em;
+}
+
+#menu-header-menu>.menu-item+.menu-item {
+	clear: none;
+	float: left;
+	font-size: .625em;
+	line-height: 1em;
+	padding: 0 .7399em;
+}
+
+#menu-header-menu>.menu-item a {
+	padding-left: .4em;
+}
+
+#menu-header-menu>.menu-item+.menu-item a {
+	color: #668866;
+	padding-left: 0;
+}
+
+#menu-header-menu>.menu-item+.menu-item a:focus,
+#menu-header-menu>.menu-item+.menu-item a:hover {
+	color: #ffcc66;
+}
+
+#menu-header-menu>.menu-item+.menu-item+.menu-item {
+	border-left: 1px dotted #aaa;
+}
+
+#menu-header-menu .about {
+	clear: both;
+	font-size: .75em;
+	font-weight: normal;
+	text-align: center;
+}
+
+#menu-header-menu .about a {
+	color: #ccc;
+	text-shadow: 0 0 .25em #66cc66;
+}
+
+#menu-header-menu .about a:focus,
+#menu-header-menu .about a:hover {
+	color: #fff;
+	text-shadow: 0 0 .5em #ffcc66;
+}
+
+#menu-header-menu .menu-item a {
+	text-decoration: none;
+}
+
+#menu-header-menu .sub-menu {
+	margin: 0;
+	overflow: hidden;
+}
+
+#menu-header-menu .sub-menu .menu-item {
+	background: transparent url(../../uploads/social-icons.png) no-repeat -32px 0;
+	float: left;
+	height: 24px;
+	width: 24px;
+	margin: .5625em .3062em;
+	position: relative;
+}
+
+#menu-header-menu .sub-menu .identica {
+	background-position: -88px 0;
+}
+
+#menu-header-menu .sub-menu .fb {
+	background-position: -256px 0;
+}
+
+#menu-header-menu .sub-menu .ee {
+	background-position: -200px 0;
+}
+
+#menu-header-menu .sub-menu .twitter {
+	background-position: -144px 0;
+}
+
+#menu-header-menu .sub-menu .gitorious {
+	background-position: -312px 0;
+}
+
+#menu-header-menu .sub-menu .menu-item a {
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-indent: 9999px;
+	white-space: nowrap;
+}
+
+/* Main menu */
+#menu-main-menu {
+	margin: 0;
+	overflow: hidden;
+	padding: 0 1.25em;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 58.75em;
+}
+
+#menu-main-menu .menu-item {
+	color: #aaa;
+	float: left;
+	font-size:1.125em;
+	font-weight: bold;
+	line-height: 2.5em;
+}
+
+#menu-main-menu .menu-item a {
+	color: #aaa;
+	display: block;
+	padding: 0 1.5em 0 0;
+	text-decoration: none;
+}
+
+#menu-main-menu .menu-item a:focus,
+#menu-main-menu .menu-item a:hover {
+	color: #ddd;
+	text-shadow: 0 0 .5em #ffcc66;
+}
+
+/* Body styles
+----------------------------------------------------------------------------- */
+
+#site-body {
+	background-color: #f6f6f6;
+	clear: both;
+	float: left;
+	margin-top: 8em;
+	overflow: hidden;
+	padding-bottom: 1em;
+	position: relative;
+	width: 100%;
+}
+
+#site-body ::selection {
+	background-color: #668866;
+	color: #fff;
+}
+
+#site-body ::-moz-selection {
+	background-color: #668866;
+	color: #fff;
+}
+
+#body-content {
+	clear: left;
+	float: left;
+	margin: 0 1.25em;
+	/*overflow: hidden;*/
+	width: 43.75em;
+}
+
+#body-content .console,
+#body-content pre {
+	background-color: #000;
+	border-radius: .25em;
+	color: #aaa;
+	font: normal .75em/1.6667em 'Droid Sans Mono', monospace !important;
+	padding: .5em;
+}
+
+#body-content pre kbd {
+	color: #aa9955;
+	font-size: 1.3333em;
+}
+
+#body-content pre strong {
+	color: #89d72a;
+}
+
+#body-content ol ol {
+	list-style-type: lower-alpha
+}
+
+#body-content ol ol li {
+	font-size: 1em;
+	margin: .5em auto;
+}
+
+#body-content .external {
+	color: #006600;
+}
+
+#body-content a.external:focus,
+#body-content a.external:hover {
+	border-bottom: 1px dotted #008800;
+}
+
+#site-sidebar {
+	clear: right;
+	float: right;
+	margin: 0 1.25em 0 0;
+	width: 13.75em;
+}
+
+#site-sidebar .widget {
+	margin: 1.125em 0;
+}
+
+.project-right-column aside,
+#site-sidebar .widget_tag_cloud,
+#site-sidebar .widget_nav_menu,
+#site-sidebar .widget_categories {
+	border: 1px solid #d3d3d3;
+	border-radius: .5em;
+	box-shadow: 0 0 10px #ddd;
+	background-color: #eee;
+	overflow: hidden;
+	padding: .5em;
+}
+
+#site-sidebar .widget_tag_cloud {
+	text-align: center;
+}
+
+#site-sidebar .widget_tag_cloud  .tagcloud {
+	border-top: 1px solid #ddd;
+	margin-top: .25em;
+	padding-top: .5em;
+}
+
+#site-sidebar .widget .widget-title {
+	display: inline;
+	font: bold .875em 'Droid Sans', sans-serif;
+	margin: .5em 0;
+	text-align: center;
+}
+
+#site-sidebar .widget > ul {
+	color: #aaa;
+	list-style-type: square;
+	margin: 0 0 1em;
+	padding-left: 1em;
+}
+
+#site-sidebar .widget a {
+	color: #000;
+	font-size: .8em;
+	line-height: 1.7em;
+	text-decoration: none;
+}
+
+#site-sidebar .widget_nav_menu .menu {
+	margin: .25em;
+}
+
+#site-sidebar .widget_nav_menu a {
+	color: #880000;
+	font-size: .875em;
+	line-height: 1.7143em;
+}
+
+#site-sidebar .widget_nav_menu a:hover,
+#site-sidebar .widget_categories a:hover {
+	border-bottom: 1px dotted #668866;
+}
+
+#site-sidebar .widget_categories > ul {
+	margin: .5em 0 0 .5em;
+}
+
+#site-sidebar .widget_categories .children {
+	list-style-type: none;
+	margin-left: .1em;
+	padding: 0;
+}
+
+#site-sidebar .widget_categories .children li:before {
+	color: #000;
+	content: '-';
+	padding-right: .25em;
+}
+
+#site-sidebar .widget_categories .children a {
+	color: #666;
+}
+
+.widget_tag_cloud {
+	text-align: center;
+}
+
+.widget_tag_cloud .widget-title {
+	position: relative;
+	width: auto;
+}
+
+#site-sidebar .widget_tag_cloud a {
+	line-height: 1em;
+}
+
+.widget_tag_cloud .widget-title:after,
+.widget_tag_cloud .widget-title:before {
+	color: #117799;
+	content: '<';
+	font-size: 1.5em;
+	font-styles: normal;
+	font-weight: bold;
+	position: absolute;
+	top: -.3em;
+	left: -.6em;
+}
+
+.widget_tag_cloud .widget-title:after {
+	content: '>';
+	top: -.1em;
+	right: -.6em;
+	left: auto;
+}
+
+
+/* Footer styles
+----------------------------------------------------------------------------- */
+
+#site-footer {
+	color: #aaa;
+	overflow: hidden;
+}
+
+#site-footer ::selection {
+	background-color: transparent;
+}
+
+#site-footer ::-moz-selection {
+	background-color: transparent;
+}
+
+#site-footer p {
+	color: #444;
+}
+
+#site-footer .widget_sudaraka_org_category_head {
+	float: left;
+	margin: 0 0 1.125em 1.25em;
+	overflow: hidden;
+	width: 10.75em;
+}
+
+#site-footer .widget_sudaraka_org_category_head a {
+	text-decoration: none;
+}
+
+#site-footer .widget_sudaraka_org_category_head:nth-child(2) .widget-title {
+	visibility: hidden;	
+}
+
+#site-footer .widget-title {
+	color: #668866;
+	font: bold 1em 'Droid Sans', sans-serif;
+	margin: 1em 0 0 0;
+}
+
+#site-footer .no-post {
+	font: .6875em;
+	line-height: 1.5em;
+	margin: .5em 0;
+}
+
+#site-footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+#site-footer .post-title {
+	color: #aaa;
+	font-size: .6875em;
+	line-height: 1.5em;
+	text-decoration: none;
+}
+
+#site-footer .post-title:hover {
+	border-bottom: 1px dotted #668866;
+}
+
+
+#menu-footer-menu {
+	clear: both;
+	margin: 0 1.25em 0;
+	overflow: hidden;
+	width: 58.75em;
+}
+
+#menu-footer-menu .menu-item {
+	float: left;
+	font-size: .8125em;
+	line-height: 1.5em;
+	padding: 0 2.6154em;
+}
+
+#menu-footer-menu .menu-item+.menu-item {
+	border-left: 1px dotted #666;
+}
+
+#menu-footer-menu .menu-item a {
+	color: #aaa;
+	text-decoration: none;
+	text-shadow: 0 0 .0625em #8888ff;
+}
+
+#menu-footer-menu .menu-item a:hover {
+	text-shadow: 0 0 .0625em #ffcc66;
+}
+
+
+#site-footer .leagal {
+	color: #666;
+	margin: .5em 1.25em 0;
+	overflow: hidden;
+}
+
+#site-footer .leagal a {
+	color: #555522;
+	text-decoration: none;
+}
+
+#site-footer .leagal p {
+	line-height: 1em;
+	margin: .6em 0;
+}
+
+#site-footer .leagal>div {
+	overflow: hidden;
+	width: 28.75em;
+}
+
+#site-footer .leagal .left {
+	clear: left;
+	float: left;
+}
+
+#site-footer .leagal .right {
+	clear: right;
+	float: right;
+}
+
+#site-footer .leagal small {
+	font-size: 0.8036em;
+	line-height: 1em;
+}
+
+#site-footer .logos {
+	float: right;
+	margin: 0 0 .5em;
+	text-align: center;
+}
+
+
+/* Generic styles
+----------------------------------------------------------------------------- */
+
+.clear {
+	clear: both;
+}
+
+.menu,
+.sub-menu {
+	list-style-type: none;
+	margin: .25em 0;
+	padding: 0;
+}
+
+.assistive-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+.widget_search #s {
+    width:180px;
+}
+
+#searchsubmit {
+	display: none;
+}
+
+
+.more-link {
+	color: #aaa;
+	font: italic normal .875em/1em 'Droid Serif', serif;
+	text-decoration: none;
+}
+
+.alignright {
+	clear: right;
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.wp-caption-text {
+	color: #555522;
+	font-size: .6875em;
+	line-height: 1.1818em;
+	margin-top: .125em;
+	text-align: center;
+}
+
+.alignleft {
+	float: left;
+}
+
+.article-meta {
+	clear: both;
+	font-size: .8125em;
+	font-style: italic;
+}
+
+#body-content .size-full,
+#body-content .size-medium {
+	border: 1px solid #bbb;
+	border-radius: .25em;
+	box-shadow: 0 0 .5em rgba(85, 85, 34, .5);
+	padding: 1px;
+}
+

@@ -1,0 +1,152 @@
+/**
+ *  Created: 02/07/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+----------------------------------------------------------------------------- */
+
+#body-content {
+	overflow: visible;
+}
+
+#body-content .post {
+	position: relative;
+}
+
+.article-content {
+	margin-left: 1em;
+	width: 41.625em;
+}
+
+.project-right-column {
+	clear: right;
+	float: right;
+	margin-left: 1.25em;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.project-right-column aside {
+	margin: 2em 0 0;
+	padding: .5em 1em;
+	width: 12.75em;
+}
+
+.project-right-column h2 {
+	border-bottom: 1px solid #ddd;
+	font-size: 1.125em;
+	font-weight: normal;
+	margin: 0 0 .25em;
+	padding-bottom: .25em;
+	text-align: center;
+}
+
+#project-role {
+	margin-top: 1em;
+}
+
+#project-role ul {
+	list-style-type: square;
+	margin: 0;
+	padding-left: 1em;
+}
+
+#project-role li {
+	color: #333311;
+	margin: .25em 0;
+}
+
+#project-summary dl {
+	font-size: .8125em;
+	margin: .5em 0 1em;
+}
+
+#project-summary dt {
+	color: #444400;
+	overflow: hidden;
+}
+
+#project-summary dd {
+	font-weight: bold;
+	line-height: 1.5385em;
+	margin: 0 0 .5em 2em;
+	position: relative;
+}
+
+#project-summary dd + dd {
+	margin-top: -.5em;
+}	
+
+#project-summary dd:before {
+	color: #ccc;
+	content: '➥';
+	font-size: 2.5em;
+	position: absolute;
+	top: -.0312em;
+	left: -.875em;
+}
+
+#project-summary dd.empty:before {
+	content: '';
+}
+
+#project-summary dd.empty {
+	height: 1em;
+	margin: 0;
+}
+
+#project-summary span {
+	color: #888;
+	font: italic normal 1em/1em 'Droid Serif', serif;
+}
+
+#body-content .features {
+	clear: both;
+	list-style-type: square;
+	margin: 1em 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+#body-content .features li {
+	margin: 0 1em;
+	padding: 0;
+}
+
+#body-content .long li {
+	min-height: 3em;
+}
+
+#body-content .col-2 li {
+	float: left;
+	width: 45%;
+}
+
+#body-content .col-3 li {
+	float: left;
+	width: 29%;
+}
+
+#body-content .col-4 li {
+	float: left;
+	width: 20%;
+}
+
+

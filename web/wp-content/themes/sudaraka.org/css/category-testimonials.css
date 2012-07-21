@@ -1,0 +1,120 @@
+/**
+ *  Created: 02/06/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* 
+----------------------------------------------------------------------------- */
+
+.page-header {
+	border: none;
+	margin-bottom: 2em;
+}
+
+#body-content .post {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	border-radius: .5em;
+	margin: 1em 0;
+	position: relative;
+}
+
+#body-content .post blockquote {
+	margin: 2em 1em 1em 9em;
+	position: relative;
+	text-align: justify;
+}
+
+#body-content .row-odd blockquote {
+	margin: 2em 9em 1em 1em;
+}
+
+#body-content .post .rdquo,
+#body-content .post .ldquo {
+	color: #aa9955;
+	font: italic normal 20em/1em 'Droid Serif', serif;
+	position: absolute;
+}
+
+#body-content .post .ldquo {
+	top: -.1em;
+	left: -.05em;
+}
+
+#body-content .post .rdquo {
+	bottom: -0.54em;
+	right: .05em;
+}
+
+#body-content .post cite {
+	clear: both;
+	color: #888;
+	float: right;
+	font: italic normal 1em/1em 'Droid Serif', serif;
+	margin: 0 1em;
+}
+
+#body-content .row-odd cite {
+	float: left;
+}
+
+#body-content .post .date {
+	background-color: #fff;
+	border: 1px solid #aa9955;
+	border-radius: .25em;
+	height: 4em;
+	width: 7.5em;
+	margin: .5em;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+
+#body-content .row-odd .date {
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: auto;
+}
+
+#body-content .post .year {
+	color: #ccc;
+	font-size: 3em;
+	font-weight: bold;
+	line-height: 1em;
+	margin: .125em 0;
+	position: absolute;
+	top: -.125em;
+	left: 0;
+	text-align: center;
+	width: 100%;
+}
+
+#body-content .post .md {
+	color: #444400;
+	font-size: 1.75em;
+	font-weight: bold;
+	line-height: 1em;
+	position: absolute;
+	bottom: .25em;
+	left: 0;
+	text-align: center;
+	width: 100%;
+}

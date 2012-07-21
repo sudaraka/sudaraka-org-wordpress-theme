@@ -1,0 +1,436 @@
+/**
+ *  Created: 01/21/2012
+ *  
+ *  Wordpress theme for Sudaraka.Org
+ *  Copyright (C) 2012 Sudaraka Wijesinghe <sudaraka.wijesinghe@gmail.com>
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Affero General Public License as
+ *  published by the Free Software Foundation, either version 3 of the
+ *  License, or (at your option) any later version.
+ *  
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Affero General Public License for more details.
+ *  
+ *  You should have received a copy of the GNU Affero General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* Article styles
+----------------------------------------------------------------------------- */
+
+#body-content {
+	width: 58.75em;
+}
+
+.article-content a {
+	color: #997711;
+}
+
+.article-title {
+	color: #333311;
+	font: italic bold 1.75em/1em 'Droid Serif', serif;
+	margin: .75em 0 .25em;
+}
+
+.article-meta {
+	color: #888;
+	margin-top: 3em;
+}
+
+.article-header .article-meta {
+	color: #666;
+	margin-top: 0;
+}
+
+.article-meta a {
+	color: #000;
+}
+
+.article-header .article-meta a {
+	color: #333;
+}
+
+.article-meta a:focus,
+.article-meta a:hover {
+	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
+.article-meta a[rel=tag] {
+	margin: 0 .6em;
+	position: relative;
+}
+
+.article-meta a[rel=tag]:after,
+.article-meta a[rel=tag]:before {
+	color: #117799;
+	content: '<';
+	font-size: 1.1em;
+	font-styles: normal;
+	font-weight: bold;
+	position: absolute;
+	top: -.1em;
+	left: -.55em;
+}
+
+.article-meta a[rel=tag]:after {
+	content: '>';
+	top: .2em;
+	right: -.55em;
+	left: auto;
+}
+
+/* Author box styles
+----------------------------------------------------------------------------- */
+
+#author-info {
+	background-color: #f0f0f0;
+	border: 1px solid #ccddbb;
+	border-radius: .25em;
+	color: #333;
+	margin: .5em 0 3em;
+	overflow: hidden;
+	padding: .25em;
+}
+
+#author-info .avatar {
+	border-radius: .25em;
+	clear: left;
+	float: left;
+	margin: 0 .5em 0 0;
+}
+
+#author-description {
+	clear: right;
+	float: left;
+	font-size: .9231em;
+	font-style: normal;
+}
+
+#author-description h3 {
+	font-size: 1.0769em;
+	font-weight: normal;
+	margin: .125em 0 0;
+}
+
+
+/* Comment listing styles
+----------------------------------------------------------------------------- */
+
+#comments-title {
+	color: #333;
+	font-size: .6875em;
+	font-weight: normal;
+	line-height: 2.6em;
+	margin: 0 0 2.6em 7.2727em;
+	text-transform: uppercase;
+}
+
+.commentlist {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0 5em;
+}
+
+.commentlist > li.comment {
+	background-color: #f6f6f6;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	margin: 0 0 1em;
+	padding: .5em;
+	position: relative;
+}
+
+.commentlist > li.comment:before {
+	content: url(../images/comment-arrow.png);
+	position: absolute;
+	left: -21px;
+}
+
+.commentlist > li.bypostauthor {
+	background-color: #ddd;
+	border: 1px solid #d3d3d3;
+}
+
+.commentlist > li.bypostauthor:before {
+	content: url(../images/comment-arrow-bypostauthor.png);
+}
+
+.commentlist .avatar {
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	padding: 1px;
+	position: absolute;
+	top: 0;
+	left: -5.7046em;
+}
+
+.commentlist .children .avatar {
+	top: 1em;
+	left: 1em;
+}
+
+.commentlist .fn {
+	color: #000;
+	font-size: 1.1818em;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.comment-meta {
+	color: #666;
+	font-size: .6875em;
+	font-style: italic;
+	line-height: 1em;
+}
+
+.commentlist .children li.comment .comment-meta {
+	line-height: 1.625em;
+	margin-left: 2.5937em;
+}
+
+.comment-meta a {
+	color: #333;
+}
+
+.comment-meta a:focus,
+.comment-meta a:hover {
+	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
+.comment-content p {
+	font-size: .75em;
+	margin: 1em 0 1.5em;
+}
+
+
+.comment-content a {
+	color: #880000;
+}
+
+.comment-content a:focus,
+.comment-content a:hover {
+	border-bottom: 1px dotted #880000;
+}
+
+.comment-reply-link {
+	background-color: #e6e6e6;
+	border: 1px solid #ccc;
+	border-radius: .25em;
+	color: #666;
+	display: inline-block;
+	font-size: .75em;
+	padding: .25em .5em;
+}
+
+.comment-reply-link:focus,
+.comment-reply-link:hover {
+	background-color: #666;
+	border: 1px solid #e6e6e6;
+	color: #fff;
+}
+
+.commentlist .children {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.commentlist .children li.comment {
+	background-color: #fff;
+	border-left: 1px dotted #ccc;
+	border-radius: 0 .25em .25em 0;
+	margin: 1em 0 0;
+	padding: 1em;
+	position: relative;
+}
+
+.commentlist .children > li.bypostauthor {
+	background-color: #ddd;
+	border-left: 1px dotted #d3d3d3;
+}
+
+.nopassword,
+.nocomments {
+	color: #ccc;
+	font-size: 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+/* Respond box styles
+----------------------------------------------------------------------------- */
+
+#respond {
+	background-color: #e0e0e0;
+	border: 1px solid #c6c6c6;
+	border-radius: .25em;
+	margin: 2em 10em;
+	padding: 1em;
+	position: relative;
+}
+
+.commentlist #respond {
+	margin: 2em;
+}
+
+#respond p {
+	margin: .5em 0;
+}
+
+#respond a {
+	color: #880000;
+}
+
+#respond a:focus,
+#respond a:hover {
+	border-bottom: 1px dotted #880000;
+}
+
+#reply-title {
+	color: #333;
+	font-size: 1.5em;
+	line-height: 1em;
+	margin: 0;
+}
+
+#respond .comment-notes,
+#respond .logged-in-as {
+	font-size: .8125em;
+}
+
+#respond .comment-form-author,
+#respond .comment-form-email,
+#respond .comment-form-url,
+#respond .comment-form-comment {
+	position: relative;
+}
+
+#respond label {
+}
+
+#respond .comment-form-author label,
+#respond .comment-form-email label,
+#respond .comment-form-url label,
+#respond .comment-form-comment label {
+	background-color: #eee;
+	box-shadow: 1px 2px 2px rgba(204, 204, 204, .8);
+	color: #555;
+	display: inline-block;
+	font-size: .9286em;
+	min-width: 4.2857em;
+	padding: .25em .5em;
+	position: absolute;
+	top: .3077em;
+	left: .3077em;
+	z-index: 1;
+}
+
+#respond input[type="text"],
+#respond textarea {
+	background-color: #fff;
+	border: .2857em solid #eee;
+	border-radius: .3571em;
+	box-shadow: 0 1px 3px rgba(204, 204, 204, .95) inset;
+	padding: .3571em .75em;
+	position: relative;
+	text-indent: 4.6154em;
+}
+
+#respond input[type="text"]:focus,
+#respond textarea:focus {
+	text-indent: 0;
+	z-index: 1;
+}
+
+#respond input[type="text"] {
+	display: block;
+	height: 1.7143em;
+	width: 75%;
+}
+
+#respond textarea {
+	height: 8em;
+	width: 95%;
+	line-height: 1.2857em;
+	padding: .75em;
+	resize: vertical;
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
+#respond .form-submit {
+	float: right;
+	margin: -1.4286em 0 .7143em;
+}
+
+#respond input#submit {
+	background-color: #222;
+	border:none;
+	border-radius: .2143em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+	color: #eee;
+	cursor: pointer;
+	margin: 1.4286em 0;
+	padding: .3571em 3em .3571em 1.5714em;
+	position: relative;
+	left: 2.1429em;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+}
+
+#respond input#submit:hover {
+	color: #fff;
+	text-shadow: 0 0 .5em #ffcc66;
+}
+
+#respond .comment-form-author .required,
+#respond .comment-form-email .required {
+	color: #BD3500;
+	font-size: 1.5714;
+	font-weight: bold;
+	position: absolute;
+	top: .75em;
+	left: 75%;
+	z-index: 1;
+}
+
+.post {
+	position: relative;
+}
+
+.addthis_toolbox {
+	position: absolute;
+	top: 0;
+	right: 1em;
+}
+
+.post-links {
+	background-color: #eee;
+	border: 1px solid #ddd;
+	border-radius: .25em;
+	color: #222;
+	font-size: smaller;
+	line-height: 1.6923em;
+	list-style-type: none;
+	margin: 2em 0;
+	padding: 1em 1.5385em;
+}
+
+#body-content .post-links li:before {
+	color: #444400;
+	content: '→';
+	padding-right: 1em;
+}
+
+#body-content .post-links li {
+	font-size: 1em;
+	line-height: 1.6923em;
+	margin: 0;
+}

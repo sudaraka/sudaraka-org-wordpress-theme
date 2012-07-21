@@ -1,0 +1,3150 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>GBNE Agent API</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<style type="text/css">
+			<!--
+body {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	margin: 0px 0px 50px;
+}
+a
+{
+	color :#ff6c00
+}
+div#heading
+{
+	font: italic bold 20px Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	background: #002A76;
+	text-align: center;
+	padding: 10px;
+	letter-spacing: 5px;
+}
+div#body
+{
+	margin: 10px;
+}
+p.SectionTopic
+{
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0px 0px 5px;
+	color: #002A76;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+p.SectionTopic span
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 0px;
+	padding: 0px 0px 0px 15px;
+}
+ol.toc_l1
+{
+	font: normal 12px Verdana, Arial, Helvetica, sans-serif;
+	list-style: decimal outside;
+	color: #666666;
+}
+ol.toc_l1 li
+{
+	padding-bottom: 10px;
+}
+ol.toc_l1 li a
+{
+	text-decoration: none;
+}
+ol.toc_l1 li a:hover
+{
+	text-decoration: underline;
+}
+ol.toc_l2
+{
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	list-style: upper-roman outside;
+}
+ol.toc_l2 li
+{
+	padding: 0px;
+}
+div.seperator
+{
+	background: #98B8DF;
+	border: 1px solid #000000;
+	height: 5px;
+	margin: 10px 0px 20px;
+	padding: 0px;
+	width: auto;
+}
+p.article
+{
+	margin-right: 50px;
+	text-align: justify;
+}
+p.article b
+{
+	font: bold 12px Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	text-decoration: underline;
+}
+div.sample
+{
+	font: 12px "Courier New", Courier, mono;
+	color: #333333;
+	text-align: left;
+	border-top: 1px solid #999999;
+	border-right: 1px none #999999;
+	border-bottom: 1px solid #999999;
+	border-left: 1px none #999999;
+	padding: 15px 0px;
+}
+table.param
+{
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	border: 1px solid #999999;
+}
+table.param tr th
+{
+	color: #FFFFFF;
+	background: #333333;
+	padding: 4px;
+}
+table.param tr td
+{
+	vertical-align: top;
+	padding-bottom: 5px;
+}
+table.param tr td p
+{
+	margin-top: 7px;
+	margin-bottom: 0px;
+}
+table.param colgroup col#param
+{
+	font-weight: bold;
+	width: 200px;
+}
+table.param tr td span.note
+{
+	font: bold 10px "Courier New", Courier, mono;
+	color: #ff0000;
+	margin-left: 10px;
+}
+table.param colgroup col#type
+{
+	width: 100px;
+	font-style: italic;
+}
+table.param colgroup col#desc
+{
+	width: 400px;
+}
+div.back_toc
+{
+	text-align: right;
+}
+table.command
+{
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
+	border: 1px solid #999999;
+}
+table.command tr th
+{
+	color: #FFFFFF;
+	background: #333333;
+	padding: 4px;
+}
+table.command tr td
+{
+	vertical-align: top;
+	padding-bottom: 5px;
+	font-style: normal;
+}
+table.command tr td a
+{
+	color: #496C98;
+	text-decoration: none;
+}
+table.command tr td a:hover
+{
+	text-decoration: underline;
+}
+table.command colgroup col#id
+{
+	font-weight: bold;
+	width: 90px;
+	text-align: center;
+}
+table.command colgroup col#name
+{
+	width: 250px;
+}
+table.command colgroup col#desc
+{
+	width: 350px;
+	font-size: 10px;
+	color: #666666;
+}
+
+p.note
+{
+	font: bold 12px Arial, Helvetica, sans-serif;
+}
+p.note table
+{
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+p.note table colgroup col#key
+{
+	font: bold 10px "Courier New", Courier, mono;
+	color: #ff0000;
+	padding-right: 10px;
+	padding-left: 20px;
+}
+--></style>
+	</head>
+	<body>
+		<a name="top_page"></a>
+		<div id="heading">GBNE Agent API</div>
+		<div id="body">
+			
+ <p class="SectionTopic">Table of Content</p>
+			<ol class="toc_l1">
+				<li>
+					<a href="#toc01">Protocol Description</a></li>
+				<li>
+					<a href="#toc02">Command Execution (HTTP Request)</a></li>
+				<li>
+					<a href="#toc03">Command Output (XML Document)</a></li>
+				<li>
+					<a href="#toc04">Commands</a>
+			<ol class="toc_l2">
+				<li>
+					<a href="#toc04I">Account Signup</a></li>
+				<li>
+					<a href="#toc04II">Trigger Callback</a></li>
+				<li>
+					<a href="#toc04III">Get Calling Plan List</a></li>
+				<li>
+					<a href="#toc04IV">Get DID Group List</a></li>
+				<li>
+					<a href="#toc04V">Balance Update</a></li>
+				<li>
+					<a href="#toc04VI">Get Call Records</a></li>
+				<li>
+					<a href="#toc04VII">Get Call Rates</a></li>
+				<li>
+					<a href="#toc04VIII">Get/Set Account Status</a></li>
+				<li>
+					<a href="#toc04IX">ANI Register</a></li>
+				<li>
+					<a href="#toc04X">View Account</a></li>
+				<li>
+					<a href="#toc04XI">Voicemail</a></li>
+				<li>
+					<a href="#toc04XII">Update Customer Information</a></li>
+				<li>
+					<a href="#toc04XIII">Recharge Calling Plan</a></li>
+				<li>
+					<a href="#toc04XIV">Change Calling Plan</a></li>
+				<li>
+					<a href="#toc04XV">Assigns MAC Address</a></li>
+				<li>
+					<a href="#toc04XVI">View Transactions</a></li>
+				<li>
+					<a href="#toc04XVII">Remove Child DID</a></li>
+				<li>
+					<a href="#toc04XVIII">Add Child DID</a></li>
+				<li>
+					<a href="#toc04XIX">View Call Forwarding Configuration</a></li>
+				<li>
+					<a href="#toc04XX">Set Call Forwarding</a></li>
+				<li>
+					<a href="#toc04XXI">Second Line Signup</a></li>
+				<li>
+					<a href="#toc04XXII">VoIP Box Details</a></li>
+				<li>
+					<a href="#toc04XXIII">Web Site Content</a></li>
+			</ol>
+			</li>
+			<li>
+				<a href="#toc05">Error Codes</a></li>
+			</ol>
+			<p class="note">
+				Parameter table key:
+				<table cellspacing="0" cellpadding="0">
+					<colgroup>
+						<col id="key" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>*</td>
+						<td>Required parameter</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Available for VoIP agents only</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Available for Callingcard agents only</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Used by the internal &quot;Transaction Control System&quot;. (Not available for 
+							all agents)</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Sensitive information, communicated and stored as plain text. Provide at your 
+							own risk. (Agent API system will never postback the sensitive information)</td>
+					</tr>
+				</table>
+			</p>
+			<div class="seperator">&nbsp;</div>
+			<a name="toc01"></a>
+			<p class="SectionTopic">Protocol Description</p>
+			
+ <p class="article">GBNE Agent API allows clients' applications to securely connect 
+  directly to the GBNE Application/Web Server and submit transaction data. All 
+  requests will be initiated by the client. The client submits the data as HTTP-Post. 
+  The Http Post must consist of a set of fields that are required for each transaction, 
+  and a set of fields that are optional. The server responds with an XML document 
+  of transaction data and result via same HTTP stream (Note: <em> GBNE Agent API 
+  XML document is <u>NOT SOAP compliant</u></em>).<br />
+  XML document has common structure for all transactions except for the output 
+  section where you will receive the command specific result (details on the XML 
+  document structure is on the &quot;Command Output section&quot;).</p>
+			<p class="article">To implement, a developer would design a script that does the 
+				following:
+				<ol>
+					<li>
+						Obtains all of the information needed to process a transaction.</li>
+					<li>
+						Initiates a HTTP Post from their server to 
+						http://agent.gbne.net/api/agentapi.php</li>
+					<li>
+						Receives the response (XML Document over HTTP) from the gateway and processes 
+						the response to display the appropriate result to the end user.</li>
+				</ol>
+			</p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<a name="toc02"></a>
+			<p class="SectionTopic">Command Execution (HTTP Request)</p>
+			
+ <p class="article">In order to execute GBNE Agent API commands (commands), you 
+  need to post a HTTP request with all the required parameters and other optional 
+  parameters to http://agent.gbne.net/api/agentapi.php<br />
+				Following is a list of required parameters common to all commands.</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>api_agent<span class="note">*</span></td>
+					<td>string (16)</td>
+					<td><p>API username assigned to your agent account by GBNE.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>api_agent_password<span class="note">*</span></td>
+					<td>string (16)</td>
+					<td>Correct password for the above username</td>
+				</tr>
+				<tr>
+					<td>api_command<span class="note">*</span></td>
+					<td>integer</td>
+					
+   <td>Command ID you need to execute (Refer &quot;Commands&quot;)</td>
+				</tr>
+			</table>
+			<p class="article">Sample HTTP request:
+				<div class="sample">POST /api/agentapi.php HTTP/1.1<br />
+					Host: agent.gbne.net<br />
+					Content-Length: <strong>length</strong><br />
+					<br />
+					api_agent=<strong>your_username</strong>&amp;api_agent_password=<strong>your_password</strong>&amp;api_command=<strong>your_command_id</strong>&amp;parameter1=value1&amp;parameter2=value2...</div>
+			</p>
+			
+ <p><strong>Note:</strong> Above sample shows the minimum HTTP header information 
+  for your understanding, your actual request may/will include much other information 
+  depending on the browser or the programming language you use.</p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<a name="toc03"></a>
+			<p class="SectionTopic">Command Output (XML Document)</p>
+			
+ <p class="article">For all the requests you make (via HTTP post) Agent API system 
+  response with a XML document via same HTTP stream. XML document win always confirm 
+  to the following structure.</p>
+			<div class="sample">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; 
+				?&gt;<br />
+				&lt;gbne_agent_api&gt;<br />
+				&nbsp;&nbsp;&lt;<strong>response</strong>&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;0&lt;/code&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Successful&lt;/message&gt;<br />
+				&nbsp;&nbsp;&lt;/<strong>response</strong>&gt;<br />
+				&nbsp;&nbsp;&lt;<strong>request</strong>&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;transaction_id&gt;89982CD8-0F203738-B8C4BD55-3151920D&lt;/transaction_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;transaction_datetime&gt;2005-05-22 06:30:42 
+				PM&lt;/transaction_datetime&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;remote_ip&gt;127.0.0.1&lt;/remote_ip&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;remote_host&gt;localhost&lt;/remote_host&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;parameters&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;api_agent&gt;your_username&lt;/api_agent&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;api_command&gt;your_command_id&lt;/api_command&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;parameter1&gt;value1&lt;/parameter1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;parameter2&gt;value2&lt;/parameter2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- list of parameters and values you 
+					have posted --&gt;</em><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/parameters&gt;<br />
+				&nbsp;&nbsp;&lt;/<strong>request</strong>&gt;<br />
+				&nbsp;&nbsp;&lt;<strong>output</strong>&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- command specific output structure --&gt;</em><br />
+				&nbsp;&nbsp;&lt;/<strong>output</strong>&gt;<br />
+				&lt;/gbne_agent_api&gt;
+			</div>
+			<p class="article">As you can see in the above sample Agent API response is an XML 
+				document with the root node &quot;<em>gbne_agent_api</em>&quot;. Root node 
+				contains 3 sub-nodes <em>Response</em>, <em>Request</em> and <em>Output</em>.</p>
+			<p class="article"><b>Response Section</b><br />
+				This sub node of the XML document indicates the system's internal status of the 
+				command execution process.</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Sub-node</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>code</td>
+					<td>integer</td>
+					<td><p>API command status. This will be 0 (Zero) when command is successfully executed. 
+							And incase of the failure &quot;<em>code</em>&quot; will contain the 
+							corresponding error value (Refer &quot;Error Codes&quot;)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>message</td>
+					<td>string</td>
+					<td>Descriptive text corresponding to the code</td>
+				</tr>
+			</table>
+			<p class="article"><b>Request Section</b><br />
+  This section contains some statistics related to the HTTP request you have posted. 
+  Content of this section should always be submitted when reporting an issue related 
+  to the Agent API.</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Sub-node</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>transaction_id</td>
+					<td>string (35)</td>
+					
+   <td>A unique identifier assigned to each command execution process.</td>
+				</tr>
+				<tr>
+					<td>transaction_datetime</td>
+					<td>datetime</td>
+					
+   <td>Date and time system received the HTTP request for the command execution. 
+	(in &quot;<em>YYYY-MM-DD HH:MM:SS AM/PM</em>&quot; format)</td>
+				</tr>
+				<tr>
+					<td>remote_ip</td>
+					<td>string (15)</td>
+					<td>IP address of the HTTP request origination.</td>
+				</tr>
+				<tr>
+					<td>remote_host</td>
+					<td>string</td>
+					<td>Host name of the remote system. This could be blank depending on the parameters 
+						of HTTP header.</td>
+				</tr>
+				<tr>
+					<td>parameters</td>
+					<td>xml node</td>
+					
+   <td>Collection of all the parameters and their values your request has posted 
+	(except for the &quot;<em>api_agent_password</em>&quot; parameter and its 
+	value). You can use this data to verify your request.</td>
+				</tr>
+			</table>
+			<p class="article"><b>Output Section</b><br />
+				This is the final first-level sub node of the XML document. Content of this 
+				sub-node will differ from command to command. Refer each command's output for 
+				details
+			</p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<a name="toc04"></a>
+			<p class="SectionTopic">Commands</p>
+			<br />
+			<table class="command" cellspacing="1">
+				<tr>
+					<th>
+						Command ID</th>
+					<th>
+						Name</th>
+					<th>
+						Details</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="name" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+				<tr>
+					<td>101</td>
+					<td><a href="#toc04I">Account Signup</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td><a href="#toc04II">Trigger Callback</a></td>
+					<td>Callback products only</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td><a href="#toc04III">Get Calling Plan List</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>104</td>
+					<td><a href="#toc04IV">Get DID Group List</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>105</td>
+					<td><a href="#toc04V">Balance Update</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>106</td>
+					<td><a href="#toc04VI">Get Call Records</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>107</td>
+					<td><a href="#toc04VII">Get Call Rates</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>108</td>
+					<td><a href="#toc04VIII">Get/Set Account Status</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>109</td>
+					<td><a href="#toc04IX">ANI Register</a></td>
+					<td>Callingcard products only</td>
+				</tr>
+				<tr>
+					<td>110</td>
+					<td><a href="#toc04X">View Account</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>111</td>
+					<td><a href="#toc04XI">Voicemail</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>112</td>
+					<td><a href="#toc04XII">Update Customer Information</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>113</td>
+					<td><a href="#toc04XIII">Recharge Calling Plan</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>114</td>
+					<td><a href="#toc04XIV">Change Calling Plan</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>115</td>
+					<td><a href="#toc04XV">Assigns MAC Address</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>116</td>
+					<td><a href="#toc04XVI">View Transactions</a></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>117</td>
+					<td><a href="#toc04XVII">Remove Child DID</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>118</td>
+					<td><a href="#toc04XVII">Add Child DID</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>119</td>
+					<td><a href="#toc04XIX">View Call Forwarding Configuration</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>120</td>
+					<td><a href="#toc04XX">Set Call Forwarding</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>121</td>
+					<td><a href="#toc04XXI">Second Line Signup</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>122</td>
+					<td><a href="#toc04XXII">VoIP Box Details</a></td>
+					<td>VoIP agents only</td>
+				</tr>
+				<tr>
+					<td>123</td>
+					<td><a href="#toc04XXIII">Web Site Content</a></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04I"></a>
+			<p class="SectionTopic">Command - 101:<span>Account Signup</span></p>
+			<p class="article">This command enables you to configure and activate a customer 
+				account (Callingcard, Callback or VoIP). Account signup fetch a next available 
+				PIN from agent's &quot;<em>Retail Accounts</em>&quot; product and issue it to 
+				the customer by activating it, if you don't have unused PINs left in your 
+				retail product, this command will fail.</p>
+			
+ <p class="article">Account activation on signup depends on the agent account's 
+  configuration. If your agent account is set to &quot;<em>Signup Post Authorization</em>&quot; 
+  mode account will be created as an inactive/pending. Before customer use this 
+  account you need to authorize it from GBNE Agent MIS customer maintenance section. 
+  You can configure you agent account to send a notification to a URL on your 
+  website on customer account post authorization, this will cause the system to 
+  post PIN of the authorized customer account to your URL. In addition to the 
+  PIN, HTTP post will contain a parameter named &quot;<em>command</em>&quot; with 
+  value &quot;<em>POSTAUTHORIZE</em>&quot; in order to indicate that this is a 
+  post authorization notification.<br />
+				If your agent account is set to online account authorization, customer accounts 
+				will be automatically activated at signup and be ready to use.</p>
+			<p class="article">Account signup command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_balance<span class="note">*</span></td>
+					<td>double</td>
+					<td>Prepaid account balance used for web callback and toll free calls.</td>
+				</tr>
+				<tr>
+					<td>account_calling_plan<span class="note">1</span></td>
+					<td>integer</td>
+					<td><p>Must be a valid id of a calling plan belongs to retail product of the agent. 
+							Invalid calling plan id will cause an error and stop the command from 
+							proceeding.</p>
+						<p>You can get a list of available calling plans by executing the command 103.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>account_did_code<span class="note">1</span></td>
+					<td>string (3)</td>
+					<td><p>3 digit (string) area code of the DID you want to assigned to this account.<br />
+	 When this parameter is empty a virtual phone number (1555xxxxxxx) will be 
+	 assigned to your account.</p>
+						<p>If provided area code is invalid or there are no available phone numbers in that 
+							are, command will fail.</p>
+						<p>You can get a list of available DID groups (area codes) by executing the command 
+							104.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>voip_box_id<span class="note">1</span></td>
+					<td>integer</td>
+					<td><p>If not provided a VoIP box (phone adapter hardware) 
+	 will not be issued for the account.</p>
+						<p>You can get a list of available VoIP boxes by executing the command 122.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>registered_phone<span class="note">2</span></td>
+					<td>string (32)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_first_name</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_last_name</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_phone</td>
+					<td>string (20)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_email</td>
+					<td>string (50)</td>
+					<td>Invoices will only be emailed to customer if email address is available</td>
+				</tr>
+				<tr>
+					<td>customer_password</td>
+					<td>string (16)</td>
+					<td>If not provided, system will generate a password for each customer profile</td>
+				</tr>
+				<tr>
+					<td>customer_ip<span class="note">3</span></td>
+					<td>string (15)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_street1</td>
+					<td>string (30)</td>
+					<td>Billing address of the customer.</td>
+				</tr>
+				<tr>
+					<td>customer_address_street2</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_city</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_state</td>
+					<td>string (20)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_zipcode</td>
+					<td>string (10)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_country</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_street1</td>
+					<td>string (30)</td>
+					
+   <td>Shipping address. This address will be used to ship VoIP hardware.</td>
+				</tr>
+				<tr>
+					<td>shipping_address_street2</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_city</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_state</td>
+					<td>string (20)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_zipcode</td>
+					<td>string (10)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_country</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_number<span class="note">3,4</span></td>
+					<td>string (20)</td>
+					
+   <td>Customer credit cards are never charged by GBNE. Agent must do the credit 
+	card validation and charge the customer. This information is collected only 
+	for the reference of agents.</td>
+				</tr>
+				<tr>
+					<td>creditcard_expiration_month<span class="note">3</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_expiration_year<span class="note">3</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_security_code<span class="note">3</span></td>
+					<td>string (3)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_holder</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document</p>
+			<p class="article"><b>On Successful Signup</b></p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;new_account&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;customer_number&gt;001&lt;/customer_number&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;account_status&gt;1&lt;/account_status&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;calling_plan&gt;01&lt;/calling_plan&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;mac_address&gt;00-00-00-00-00-00&lt;/mac_address&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;customer&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;first_name&gt;&lt;/first_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;last_name&gt;&lt;/last_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address1&gt;&lt;/billing_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address2&gt;&lt;/billing_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_city&gt;&lt;/billing_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_state&gt;&lt;/billing_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_zipcode&gt;&lt;/billing_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_country&gt;&lt;/billing_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_address1&gt;&lt;/shipping_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;shippingg_address2&gt;&lt;/shippingg_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_city&gt;&lt;/shipping_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_state&gt;&lt;/shipping_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_zipcode&gt;&lt;/shipping_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_country&gt;&lt;/shipping_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone&gt;&lt;/phone&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;email&gt;customer@email.com&lt;/email&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;box_id&gt;1&lt;/box_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;password&gt;12345&lt;/password&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/customer&gt;<br />
+				&nbsp;&nbsp;&lt;/new_account&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article"><b>On Failed Signup</b></p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;1&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article">Account signup may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					
+   <td>Provided calling plan id is invalid. Calling plan must belong to the &quot;<em>Retail 
+	Accounts</em>&quot; product of the agent.</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Provided DID area code is invalid or there are no available phone numbers in 
+						the group.</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Agent doesn't have a &quot;<em>Retail Accounts</em>&quot; product</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>No available (unused) PINs in the agent's retail product.</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					
+   <td>Agent doesn't have enough credit for the transaction.</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Customer credit card provided for the transaction is blacklisted by the &quot;<em>Transaction 
+							Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>Customer IP provided for the transaction is blacklisted by the &quot;<em>Transaction 
+							Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>Customer email address provided for the transaction is blacklisted by the 
+						&quot;<em>Transaction Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>201</td>
+					<td>Customer credit card provided for the transaction exceeds the limits allowed by 
+						&quot;<em>Transaction Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>202</td>
+					<td>Customer IP provided for the transaction exceeds the limits allowed by &quot;<em>Transaction 
+							Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>203</td>
+					
+   <td>Customer email address provided for the transaction exceeds the limits 
+	allowed by &quot;<em>Transaction Control System</em>&quot;</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04II"></a>
+			<p class="SectionTopic">Command - 102:<span>Trigger Callback</span></p>
+			<p class="article">This command enables you to trigger web callback.</p>
+			<p class="article">Trigger callback command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>Customer account number (PIN)</td>
+				</tr>
+				<tr>
+					<td>call_origination<span class="note">*</span></td>
+					<td>string</td>
+					<td>Caller (origination) phone number.</td>
+				</tr>
+				<tr>
+					<td>call_origination_extension</td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>call_destination</td>
+					<td>string</td>
+					<td>Destination phone number</td>
+				</tr>
+				<tr>
+					<td>call_delay</td>
+					<td>integer</td>
+					<td>If a number is provided, system will delay the call in &quot;<em>call_delay</em>&quot; 
+						minutes.
+					</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document</p>
+			<p class="article"><b>On Successful Signup</b></p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;9.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;100.00&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;current_time&gt;2005-05-23 07:55:23 PM&lt;/current_time&gt;<br />
+				&nbsp;&nbsp;&lt;call_time&gt;2005-05-23 08:00:00 PM&lt;/call_time&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article"><b>On Failed Signup</b></p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;1&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article">Trigger callback may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account provided for the call is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Customer account is inactive</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Customer account doesn't have enough credit</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Customer account has expired</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Customer account already inuse (active call on same account)</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Caller (Origination) phone number is invalid</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Destination phone number is invalid</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Technical failure</td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Delay parameter exceeds the allowed limit (1 to 10080 minutes)</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04III"></a>
+			<p class="SectionTopic">Command - 103:<span>Get Calling Plan List</span></p>
+			<p class="article">This command returns all the calling plans and their related 
+				information of the agent's &quot;<em>Retail Accounts</em>&quot; product.</p>
+			<p class="article"><span>Get calling plan list</span>
+				command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>calling_plan_id</td>
+					<td>integer</td>
+					<td>If provided a valid calling plan id, only details of that plan will be 
+						returned.</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document. If there are no calling plans, output sub-node will be empty.
+			</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plans&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;calling_plan_id&gt;1&lt;/calling_plan_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;USA 100&lt;/name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cost&gt;100&lt;/cost&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;allow_out_plan_calls&gt;0&lt;/allow_out_plan_calls&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;&lt;/description&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destinations&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination_id&gt;1&lt;/destination_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination_name&gt;USA&lt;/destination_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination_prefix&gt;1&lt;/destination_prefix&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;allowed_minutes&gt;100&lt;/allowed_minutes&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rate_per_minute&gt;0.0100&lt;/rate_per_minute&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;buy_rate&gt;0.0010&lt;/buy_rate&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other calling plan 
+					destinations in node_1, node_2, ect.--&gt;</em>
+				<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/destinations&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fees&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fee_type_id&gt;1&lt;/fee_type_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;Setup 
+				Fee &lt;/description&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;amount&gt;0.95&lt;/amount&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other calling plan fees 
+					in node_1, node_2, ect.--&gt;</em>
+				<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/fees&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other calling plans in node_1, node_2, 
+					ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/calling_plans&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article"><span>Get calling plan list</span>
+				doesn't have any error codes.
+			</p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04IV"></a>
+			<p class="SectionTopic">Command - 104:<span>Get DID Group List</span></p>
+			<p class="article">This command returns all the DID area codes and their related 
+				information.</p>
+			<p class="article"><span>Get DID group list</span>
+				command takes in following parameters:</p>
+			
+ <table class="param" cellspacing="3">
+  <tr> 
+   <th> Parameter</th>
+   <th> Type</th>
+   <th> Description</th>
+  </tr>
+  <colgroup>
+  <col id="param" />
+  <col id="type" />
+  <col id="desc" />
+  </colgroup>
+  <tr> 
+   <td>did_group_id</td>
+   <td>integer</td>
+   <td>If provided a valid DID group id, only details of that DID group will be 
+	returned.</td>
+  </tr>
+  <tr>
+   <td>did_group_code</td>
+   <td>string</td>
+   <td>Area code (NPA) of the DID group</td>
+  </tr>
+ </table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document. If there are no DID groups, output sub-node will be empty.
+			</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;did_groups&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;did_group_id&gt;1&lt;/did_group_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;area_code&gt;202&lt;/area_code&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;WASHINGTON D.C.&lt;/name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other DID groups in node_1, node_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/did_groups&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article"><span>Get DID group list</span>
+				doesn't have any error codes.
+			</p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04V"></a>
+			<p class="SectionTopic">Command - 105:<span>Balance Update</span></p>
+			<p class="article">This command enables you to adjust or view balance (prepaid) of 
+				a single account.</p>
+			<p class="article"><span>Balance update</span>
+				command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>adjustment_method<span class="note">*</span></td>
+					<td>ENUM (string)</td>
+					<td>Valid values are &quot;<em>VIEW</em>&quot;, &quot;<em>EXACT</em>&quot;, &quot;<em>CREDIT</em>&quot; 
+						and &quot;<em>DEBIT</em>&quot;. See details of each value below.</td>
+				</tr>
+				<tr>
+					<td>adjustment_amount</td>
+					<td>double</td>
+					<td>If amount is not provided it's assumed as 0 (Zero)</td>
+				</tr>
+			</table>
+			<p class="article"><b>Parameter "adjustment_method".</b><br />
+				&nbsp;
+				<table class="command" cellspacing="3">
+					<tr>
+						<th>
+							Value</th>
+						<th>
+							Description</th>
+					</tr>
+					<colgroup>
+						<col id="id" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>VIEW</td>
+						<td>No changes will be done to the account balance. Returns the balance details.</td>
+					</tr>
+					<tr>
+						<td>EXACT</td>
+						<td>Account balance is set to the exact amount passed in &quot;<em>adjustment_amount</em>&quot; 
+							parameter.
+						</td>
+					</tr>
+					<tr>
+						<td>CREDIT</td>
+						<td>Amount passed in &quot;<em>adjustment_amount</em>&quot; parameter is credited 
+							to the customer account.</td>
+					</tr>
+					<tr>
+						<td>DEBIT</td>
+						<td>Amount passed in &quot;<em>adjustment_amount</em>&quot; parameter is taken off 
+							from the customer account.</td>
+					</tr>
+				</table>
+			</p>
+			<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;previous_balance&gt;10.00&lt;/previous_balance&gt;<br />
+				&nbsp;&nbsp;&lt;adjustment_amount&gt;1.50&lt;/adjustment_amount&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;11.50&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;100.00&lt;/calling_plan_balance&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article"><span>Balance update</span>
+				doesn't have any error codes.
+			</p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04VI"></a>
+			<p class="SectionTopic">Command - 106:<span>Get Call Records </span></p>
+			<p class="article">Returns the call record of a customer account during a specified 
+				period.</p>
+			<p class="article">Get call records command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>date_from</td>
+					<td>datetime</td>
+					<td>If not provided, all the call records from account activation date up-to-date 
+						will be returned. Date/time should be in &quot;<em>YYYY-MM-DD HH:mm:SS</em>&quot; 
+						format.
+					</td>
+				</tr>
+				<tr>
+					<td>date_to</td>
+					<td>datetime</td>
+					<td>If not provided, all the call records from account activation date up-to-date 
+						will be returned. Date/time should be in &quot;<em>YYYY-MM-DD HH:mm:SS</em>&quot; 
+						format.</td>
+				</tr>
+				<tr>
+					<td>record_page</td>
+					<td>integer</td>
+					<td>If not provided, all the records pages will be returned</td>
+				</tr>
+				<tr>
+					<td>record_page_size</td>
+					<td>integer</td>
+					<td>If not provided, all the records pages will be returned</td>
+				</tr>
+				<tr>
+					<td>sort_flag</td>
+					<td>integer</td>
+					<td>see below for the details</td>
+				</tr>
+			</table>
+			<p class="article"><b>Parameter "sort_flag".</b><br />
+				&nbsp;
+				<table class="command" cellspacing="3">
+					<tr>
+						<th>
+							Value</th>
+						<th>
+							Description</th>
+					</tr>
+					<colgroup>
+						<col id="id" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>1</td>
+						<td>Sort call records by call date/time. This is the default value for this 
+							parameter .</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Sort by cost of the call.</td>
+					</tr>
+				</table>
+				<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;100.00&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;record_page&gt;1&lt;/record_page&gt;<br />
+				&nbsp;&nbsp;&lt;record_page_count&gt;10&lt;/record_page_count&gt;<br />
+				&nbsp;&nbsp;&lt;call_records&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;call_date_time&gt;2005-05-23 
+				22:47:22&lt;/call_date_time&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;origination&gt;15551234567&lt;/origination&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination&gt;15551234568&lt;/destination&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;minutes&gt;10&lt;/minutes&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cost&gt;0.15&lt;/cost&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;in_plan&gt;1&lt;/in_plan&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;call_type&gt;CB&lt;/call_type&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- more call records in node_1, node_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/call_records&gt;<br />
+				&lt;/output&gt;</div>
+			<p class="article"><b>Parameter "call_type".</b><br />
+				&nbsp;
+				<table class="command" cellspacing="3">
+					<tr>
+						<th>
+							Value</th>
+						<th>
+							Description</th>
+					</tr>
+					<colgroup>
+						<col id="id" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>CB</td>
+						<td>Callback</td>
+					</tr>
+					<tr>
+						<td>TF</td>
+						<td>Toll-free</td>
+					</tr>
+					<tr>
+						<td>S2P</td>
+						<td>VoIP to regular phone</td>
+					</tr>
+					<tr>
+						<td>P2S</td>
+						<td>Regular phone to VoIP</td>
+					</tr>
+					<tr>
+						<td>S2S</td>
+						<td>VoIP to VoIP</td>
+					</tr>
+					<tr>
+						<td>P2F</td>
+						<td>Forwarded to regular phone</td>
+					</tr>
+					<tr>
+						<td>S2F</td>
+						<td>Forwarded to VoIP</td>
+					</tr>
+					<tr>
+						<td>VM</td>
+						<td>Voice mail access</td>
+					</tr>
+				</table>
+			<p class="article">Get call records may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account provided is invalid</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04VII"></a>
+			<p class="SectionTopic">Command - 107:<span>Get Call Rates</span></p>
+			<p class="article">Returns the call rates of an agent product based on access 
+				number or calling plan.</p>
+			<p class="article">Get call rates command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>access_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>Respective Toll-free number for callingcard rates, &quot;<em>VOIP</em>&quot; 
+						for VoIP rates or &quot;<em>CALLBACK</em>&quot; for callback rates.</td>
+				</tr>
+				<tr>
+					<td>calling_plan_id</td>
+					<td>integer</td>
+					<td>Required if &quot;<em>access_number</em>&quot; is &quot;<em>VOIP</em>&quot;.<span class="note">*</span></td>
+				</tr>
+				<tr>
+					<td>destination_letter</td>
+					<td>string (1)</td>
+					<td>If provided only the rates of destination names starting with &quot;<em>destination_letter</em>&quot; 
+						will be returned.</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;product_id&gt;100&lt;/product_id&gt;<br />
+				&nbsp;&nbsp;&lt;product_name&gt;product name&lt;/product_name&gt;<br />
+				&nbsp;&nbsp;&lt;rates&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;prefix&gt;1&lt;/prefix&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;destination&gt;US 
+				Domestic&lt;/destination&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rate&gt;0.0500&lt;/rate&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other rates in node_1, node_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/rates&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Get call rates may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Failed to determine agent product/rate for the provided access number or 
+						calling plan.</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04VIII"></a>
+			<p class="SectionTopic">Command - 108:<span>Get/Set Account Status</span></p>
+			<p class="article">Returns or adjust the status of a customer account.</p>
+			<p class="article">Get/Set account status command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>account_status</td>
+					<td>integer</td>
+					<td>Valid values are 1 (One) or 0 (Zero).
+						<p>If not provided command only returns the account status.</p>
+					</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;previous_status&gt;1&lt;/previous_status&gt;<br />
+				&nbsp;&nbsp;&lt;adjustment_status&gt;&lt;/adjustment_status&gt;<br />
+				&nbsp;&nbsp;&lt;account_status&gt;1&lt;/account_status&gt;<br />
+				&lt;/output&gt;
+			</div>
+			<p class="article">Get/Set account status may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account provided is invalid</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04IX"></a>
+			<p class="SectionTopic">Command - 109:<span>ANI Register</span></p>
+			<p class="article">Register a phone number with a callingcard account for automatic 
+				account recognition.</p>
+			<p class="article">ANI register command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>new_ani_list</td>
+					<td>CSL</td>
+					<td>Comma seperated list of ANIs (phone numbers) to be registered with the account.
+					</td>
+				</tr>
+				<tr>
+					<td>delete_ani_list</td>
+					<td>CSL</td>
+					<td>Comma seperated list of ANIs (phone numbers) to be unregistered with the 
+						account.
+					</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;error 
+				description&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;previous_ani_list&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_1&gt;15551234567&lt;/node_1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other ANIs in node_1, node_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/previous_ani_list&gt;<br />
+				&nbsp;&nbsp;&lt;deleted_ani_list&gt;15551234567, 
+				15551234568&lt;/deleted_ani_list&gt;<br />
+				&nbsp;&nbsp;&lt;added_ani_list&gt;15551234569&lt;/added_ani_list&gt;<br />
+				&nbsp;&nbsp;&lt;ani_list&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_1&gt;15551234569&lt;/node_1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other ANIs in node_1, node_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/ani_list&gt;<br />
+				&lt;/output&gt;
+			</div>
+			<p class="article">ANI register may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account provided is invalid</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04X"></a>
+			<p class="SectionTopic">Command - 110:<span>View Account </span></p>
+			<p class="article">Registers the customer and account details by account number 
+				(PIN), VoIP phone number (DID) or serial number.</p>
+			<p class="article">View account command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>search_using<span class="note">*</span></td>
+					<td>ENUM (string)</td>
+					<td>see detail below</td>
+				</tr>
+				<tr>
+					<td>search_for<span class="note">*</span></td>
+					<td>string</td>
+					<td>value to search for</td>
+				</tr>
+			</table>
+			<p class="article"><b>Parameter "search_using<span class="note"></span>".</b><br />
+				&nbsp;
+				<table class="command" cellspacing="3">
+					<tr>
+						<th>
+							Value</th>
+						<th>
+							Description</th>
+					</tr>
+					<colgroup>
+						<col id="id" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>PIN</td>
+						<td>Search by account number
+						</td>
+					</tr>
+					<tr>
+						<td>DID</td>
+						<td>Search by VoIP phone number</td>
+					</tr>
+					<tr>
+						<td>SERIAL</td>
+						<td>Search by account serial number</td>
+					</tr>
+				</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_status&gt;1&lt;/account_status&gt;<br />
+				&nbsp;&nbsp;&lt;line_status&gt;ACTIVE&lt;/line_status&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;plan_balance&gt;500.0000&lt;/plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;plan_id&gt;01&lt;/plan_id&gt;<br />
+				&nbsp;&nbsp;&lt;plan_name&gt;calling plan name&lt;/plan_name&gt;<br />
+				&nbsp;&nbsp;&lt;mac_address&gt;00-00-00-00-00-00&lt;/mac_address&gt;<br />
+				&nbsp;&nbsp;&lt;first_used_date&gt;&lt;/first_used_date&gt;<br />
+				&nbsp;&nbsp;&lt;next_bill_date&gt;2005-06-01 00:00:00&lt;/next_bill_date&gt;<br />
+				&nbsp;&nbsp;&lt;customer&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;first_name&gt;&lt;/first_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;last_name&gt;&lt;/last_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address1&gt;&lt;/billing_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address2&gt;&lt;/billing_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_city&gt;&lt;/billing_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_state&gt;&lt;/billing_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_zipcode&gt;&lt;/billing_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_country&gt;&lt;/billing_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_address1&gt;&lt;/shipping_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shippingg_address2&gt;&lt;/shippingg_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_city&gt;&lt;/shipping_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_state&gt;&lt;/shipping_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_zipcode&gt;&lt;/shipping_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_country&gt;&lt;/shipping_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone&gt;&lt;/phone&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;email&gt;customer@email.com&lt;/email&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;box_id&gt;1&lt;/box_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;password&gt;12345&lt;/password&gt;<br />
+				&nbsp;&nbsp;&lt;/customer&gt;<br />
+				&nbsp;&nbsp;&lt;child_did&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;child_did_1&gt;15551234560&lt;/child_did_1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other additional DIDs in child_did_1, 
+					child_did_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/child_did&gt;<br />
+				&nbsp;&nbsp;&lt;phone_lines&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;serial_number&gt;00100100000002&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;account_number&gt;9876543210&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;voip_did&gt;15551234566&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;account_status&gt;1&lt;/account_status&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;account_balance&gt;5.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plan_balance&gt;100.00&lt;/plan_balance&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;plan_id&gt;2&lt;/plan_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other phone lines in node_1, node_2, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/phone_lines&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">View account may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Account not found</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XI"></a>
+			<p class="SectionTopic">Command - 111:<span>Voicemail</span></p>
+			<p class="article">This command performs several sub functions based on the &quot;<em>sub_command</em>&quot; 
+				parameter. All functions are related to VoIP account's voice mail access 
+				feature.</p>
+			<p class="article">Voicemail command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>voip_did<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>sub_command</td>
+					<td>ENUM (string)</td>
+					
+   <td>See detail below. Default (no &quot;<em>sub_command</em>&quot; will return 
+	the VM folder content.</td>
+				</tr>
+				<tr>
+					<td>vm_name</td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>vm_email</td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>vm_password</td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>vm_folder</td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article"><b>Parameter "sub_command".</b><br />
+				&nbsp;
+				<table class="command" cellspacing="3">
+					<tr>
+						<th>
+							Value</th>
+						<th>
+							Description</th>
+					</tr>
+					<colgroup>
+						<col id="id" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>ADD_EXTENSION</td>
+						<td>Enable voicemail box for the account</td>
+					</tr>
+					<tr>
+						<td>DELETE_EXTENSION</td>
+						<td>Disable voicemail box for the account</td>
+					</tr>
+					<tr>
+						<td>MSG_REMOVE</td>
+						<td>Delete voicemail message</td>
+					</tr>
+					<tr>
+						<td>MSG_PLAY</td>
+						<td>Play voicemail message</td>
+					</tr>
+				</table>
+				<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail_name&gt;Voicemail Box 
+				15551234567&lt;/voice_mail_name&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail_email&gt;&lt;/voice_mail_email&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail_password&gt;1234&lt;/voice_mail_password&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;inbox&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;INBOX&lt;/name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;message_count&gt;2&lt;/message_count&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;messages&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;msg0001&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;datetime&gt;2005-05-24 
+				01:39:43 AM&lt;/datetime&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;from&gt;&lt;/from&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;size&gt;24&lt;/size&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;priority&gt;1&lt;/priority&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/msg0001&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other voicemail 
+					messages in msg0002, msg0003, ect.--&gt;</em><br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/messages&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/inbox&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other voicemail folders --&gt;</em><br />
+				&nbsp;&nbsp;&lt;/voice_mail&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">or (if &quot;<em>MSG_PLAY</em>&quot;)</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail_name&gt;Voicemail Box 
+				15551234567&lt;/voice_mail_name&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail_email&gt;&lt;/voice_mail_email&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail_password&gt;1234&lt;/voice_mail_password&gt;<br />
+				&nbsp;&nbsp;&lt;voice_mail&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;message_path&gt;&lt;/message_path&gt;<br />
+				&nbsp;&nbsp;&lt;/voice_mail&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Voicemail may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>VoIP phone number (DID) provided is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Failed to play message</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Failed to delete message</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XII"></a>
+			<p class="SectionTopic">Command - 112:<span>Update Customer Information</span></p>
+			<p class="article">Update customer profile details. Only provided details will be 
+				updated in the customer profile, if not provided those values will remain 
+				unchanged.
+			</p>
+			<p class="article">Update customer information command takes in following 
+				parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>account_calling_plan</td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_first_name</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_last_name</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_phone</td>
+					<td>string (20)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_email</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_password</td>
+					<td>string (16)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_street1</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_street2</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_city</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_state</td>
+					<td>string (20)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_zipcode</td>
+					<td>string (10)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_address_country</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_street1</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_street2</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_city</td>
+					<td>string (30)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_state</td>
+					<td>string (20)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_zipcode</td>
+					<td>string (10)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>shipping_address_country</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_status&gt;1&lt;/account_status&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;plan_balance&gt;500.0000&lt;/plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;plan_id&gt;01&lt;/plan_id&gt;<br />
+				&nbsp;&nbsp;&lt;first_used_date&gt;&lt;/first_used_date&gt;<br />
+				&nbsp;&nbsp;&lt;customer&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;first_name&gt;&lt;/first_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;last_name&gt;&lt;/last_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address1&gt;&lt;/billing_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address2&gt;&lt;/billing_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_city&gt;&lt;/billing_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_state&gt;&lt;/billing_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_zipcode&gt;&lt;/billing_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_country&gt;&lt;/billing_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_address1&gt;&lt;/shipping_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shippingg_address2&gt;&lt;/shippingg_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_city&gt;&lt;/shipping_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_state&gt;&lt;/shipping_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_zipcode&gt;&lt;/shipping_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_country&gt;&lt;/shipping_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone&gt;&lt;/phone&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;email&gt;customer@email.com&lt;/email&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;password&gt;12345&lt;/password&gt;<br />
+				&nbsp;&nbsp;&lt;/customer&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Update customer information may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					
+   <td>Provided calling plan id is invalid. Calling plan must belong to the &quot;<em>Retail 
+	Accounts</em>&quot; product of the agent.</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Customer account is invalid</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XIII"></a>
+			<p class="SectionTopic">Command - 113:<span>Recharge Calling Plan</span></p>
+			<p class="article">Manually pay the calling plan monthly amount.
+			</p>
+			<p class="article">Recharge calling plan command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>recharge_amount</td>
+					<td>double</td>
+					<td>Amount to add to prepaid account balance</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;next_bill_date&gt;2005-06-01 00:00:00&lt;/next_bill_date&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Recharge calling plan may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Calling plan id is invalid</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					
+   <td>Agent doesn't have enough credit for the transaction.</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XIV"></a>
+			<p class="SectionTopic">Command - 114:<span>Change Calling Plan</span></p>
+			<p class="article">Move customer account to a different calling plan.
+			</p>
+			<p class="article">Change calling plan command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>new_plan<span class="note">*</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_name&gt;&lt;/calling_plan_name&gt;<br />
+				&nbsp;&nbsp;&lt;old_plan_id&gt;1&lt;/old_plan_id&gt;<br />
+				&nbsp;&nbsp;&lt;new_plan_id&gt;2&lt;/new_plan_id&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Change calling plan may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Calling plan id is invalid</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XV"></a>
+			<p class="SectionTopic">Command - 115:<span>Assigns MAC Address</span></p>
+			<p class="article">Assign a MAC address (VoIP hardware) to newly signup account.
+			</p>
+			<p class="article">Assign MAC address command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>new_plan<span class="note">*</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;box_id&gt;1&lt;/box_id&gt;<br />
+				&nbsp;&nbsp;&lt;mac_address&gt;00-00-00-00-00-00&lt;/mac_address&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Assign MAC address may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Assignment failed (mostly due to boxes not available)</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XVI"></a>
+			<p class="SectionTopic">Command - 116:<span>View Transactions</span></p>
+			<p class="article">Returns transactions of the customer during a specified period.
+			</p>
+			<p class="article">View transactions command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>date_from</td>
+					<td>datetime</td>
+					<td>If not provided, all the transaction records from account activation date 
+						up-to-date will be returned. Date/time should be in &quot;<em>YYYY-MM-DD HH:mm:SS</em>&quot; 
+						format.
+					</td>
+				</tr>
+				<tr>
+					<td>date_to</td>
+					<td>datetime</td>
+					<td>If not provided, all the transaction records from account activation date 
+						up-to-date will be returned. Date/time should be in &quot;<em>YYYY-MM-DD HH:mm:SS</em>&quot; 
+						format.</td>
+				</tr>
+				<tr>
+					<td>record_page</td>
+					<td>integer</td>
+					<td>If not provided, all the records pages will be returned</td>
+				</tr>
+				<tr>
+					<td>record_page_size</td>
+					<td>integer</td>
+					<td>If not provided, all the records pages will be returned</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;record_page&gt;1&lt;/record_page&gt;<br />
+				&nbsp;&nbsp;&lt;record_page_count&gt;10&lt;/record_page_count&gt;<br />
+				&nbsp;&nbsp;&lt;transactions&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;transaction_date&gt;2005-05-24 
+				02:26:45&lt;/transaction_date&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;transaction_type&gt;SIGNUP&lt;/transaction_type&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;amount&gt;100.00&lt;/amount&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- more transaction records in node_1, node_2, 
+					ect.--&gt;</em><br />
+				&nbsp;&nbsp;&lt;/transactions&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article"><b>Parameter "transaction_type".</b><br />
+				&nbsp;
+				<table class="command" cellspacing="3">
+					<tr>
+						<th>
+							Value</th>
+						<th>
+							Description</th>
+					</tr>
+					<colgroup>
+						<col id="id" />
+						<col id="desc" />
+					</colgroup>
+					<tr>
+						<td>AUTO_PAY</td>
+						
+   <td>Automatic payment</td>
+					</tr>
+					<tr>
+						<td>PLAN</td>
+						<td>Calling plan manual payment</td>
+					</tr>
+					<tr>
+						<td>BALUP</td>
+						<td>Balance update</td>
+					</tr>
+					<tr>
+						<td>RECHG</td>
+						<td>Prepaid balance recharge</td>
+					</tr>
+					<tr>
+						<td>SIGNUP</td>
+						<td>Account signup</td>
+					</tr>
+					<tr>
+						<td>EX_DID</td>
+						
+   <td>Additional DID purchase</td>
+					</tr>
+					<tr>
+						<td>BOX</td>
+						<td>VoIP hardware purchase</td>
+					</tr>
+				</table>
+			<p class="article">View transactions may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>No transactions found</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XVII"></a>
+			<p class="SectionTopic">Command - 117:<span>Remove Child DID</span></p>
+			<p class="article">Remove additional VoIP phone number (DID).
+			</p>
+			<p class="article">Remove child DID command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>chid_did<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Remove child DID plan may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Technical failure</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XVIII"></a>
+			<p class="SectionTopic">Command - 118:<span>Add Child DID</span></p>
+			<p class="article">Add additional VoIP phone number (DID).
+			</p>
+			<p class="article">Add child DID command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>did_group_id<span class="note">*</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Add child DID plan may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Technical failure</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XIX"></a>
+			<p class="SectionTopic">Command - 119:<span>View Call Forwarding Configuration</span></p>
+			<p class="article">View VoIP call forwarding configuration.
+			</p>
+			<p class="article">View call forwarding configuration command takes in following 
+				parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;plan_balance&gt;500.0000&lt;/plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;forward_to&gt;&lt;/forward_to&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">View call forwarding configuration may fail due to following 
+				reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Technical failure</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XX"></a>
+			<p class="SectionTopic">Command - 120:<span>Set Call Forwarding</span></p>
+			<p class="article">Enable/disable VoIP call forwarding feature.
+			</p>
+			<p class="article">Set call forwarding command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>forward_number</td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document.</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;plan_balance&gt;500.0000&lt;/plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;forward_to&gt;&lt;/forward_to&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Set call forwarding may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					<td>Customer account is invalid</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Technical failure</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XXI"></a>
+			<p class="SectionTopic">Command - 121:<span>Second Line Signup</span></p>
+			<p class="article">This command enables you to add a second phone line (account) to 
+				an existing customer profile.</p>
+			<p class="article">Second line signup command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>account_number<span class="note">*</span></td>
+					<td>string</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>account_balance<span class="note">*</span></td>
+					<td>double</td>
+					<td>Prepaid account balance used for web callback and toll free calls.</td>
+				</tr>
+				<tr>
+					<td>account_calling_plan<span class="note">1</span></td>
+					<td>integer</td>
+					<td><p>Must be a valid id of a calling plan belongs to retail product of the agent. 
+							Invalid calling plan id will cause an error and stop the command from 
+							proceeding.</p>
+						<p>You can get a list of available calling plans by executing the command 103.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>account_did_code<span class="note">1</span></td>
+					<td>string (3)</td>
+					<td><p>3 digit (string) area code of the DID you want to assigned to this account.<br />
+	 When this parameter is empty a virtual phone number (1555xxxxxxx) will be 
+	 assigned to your account.</p>
+						<p>If provided area code is invalid or there are no available phone numbers in that 
+							are, command will fail.</p>
+						<p>You can get a list of available DID groups (area codes) by executing the command 
+							104.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td>registered_phone<span class="note">2</span></td>
+					<td>string (32)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>customer_ip<span class="note">3</span></td>
+					<td>string (15)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_number<span class="note">3,4</span></td>
+					<td>string (20)</td>
+					
+   <td>Customer credit cards are never charged by GBNE. Agent must do the credit 
+	card validation and charge the customer. This information is collected only 
+	for the reference of agents.</td>
+				</tr>
+				<tr>
+					<td>creditcard_expiration_month<span class="note">3</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_expiration_year<span class="note">3</span></td>
+					<td>integer</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_security_code<span class="note">3</span></td>
+					<td>string (3)</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>creditcard_holder</td>
+					<td>string (50)</td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#toc04">back</a></div>
+			<p class="article">System will respond with following data on the Output block of 
+				the XML document</p>
+			<div class="sample">&lt;output&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_code&gt;0&lt;/api_return_code&gt;<br />
+				&nbsp;&nbsp;&lt;api_return_message&gt;Signup 
+				successful&lt;/api_return_message&gt;<br />
+				&nbsp;&nbsp;&lt;customer_number&gt;1&lt;/customer_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_number&gt;0123456789&lt;/account_number&gt;<br />
+				&nbsp;&nbsp;&lt;serial_number&gt;00100100000001&lt;/serial_number&gt;<br />
+				&nbsp;&nbsp;&lt;account_balance&gt;10.00&lt;/account_balance&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan_balance&gt;500.0000&lt;/calling_plan_balance&gt;<br />
+				&nbsp;&nbsp;&lt;account_status&gt;1&lt;/account_status&gt;<br />
+				&nbsp;&nbsp;&lt;voip_did&gt;15551234567&lt;/voip_did&gt;<br />
+				&nbsp;&nbsp;&lt;calling_plan&gt;1&lt;/calling_plan&gt;<br />
+				&nbsp;&nbsp;&lt;mac_address&gt;00-00-00-00-00-00&lt;/mac_address&gt;<br />
+				&nbsp;&nbsp;&lt;customer&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;first_name&gt;&lt;/first_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;last_name&gt;&lt;/last_name&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address1&gt;&lt;/billing_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_address2&gt;&lt;/billing_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_city&gt;&lt;/billing_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_state&gt;&lt;/billing_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_zipcode&gt;&lt;/billing_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;billing_country&gt;&lt;/billing_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_address1&gt;&lt;/shipping_address1&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shippingg_address2&gt;&lt;/shippingg_address2&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_city&gt;&lt;/shipping_city&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_state&gt;&lt;/shipping_state&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_zipcode&gt;&lt;/shipping_zipcode&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;shipping_country&gt;&lt;/shipping_country&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;phone&gt;&lt;/phone&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;email&gt;customer@email.com&lt;/email&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;box_id&gt;1&lt;/box_id&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;password&gt;12345&lt;/password&gt;<br />
+				&nbsp;&nbsp;&lt;/customer&gt;<br />
+				&lt;/output&gt;<br />
+			</div>
+			<p class="article">Second line signup may fail due to following reasons</p>
+			<table class="command" cellspacing="3">
+				<tr>
+					<th>
+						Error Code</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="id" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					<td>1</td>
+					
+   <td>Provided calling plan id is invalid. Calling plan must belong to the &quot;<em>Retail 
+	Accounts</em>&quot; product of the agent.</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Provided DID area code is invalid or there are no available phone numbers in 
+						the group.</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Agent doesn't have a &quot;<em>Retail Accounts</em>&quot; product</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>No available (unused) PINs in the agent's retail product.</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					
+   <td>Agent doesn't have enough credit for the transaction.</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Customer account is invalid.</td>
+				</tr>
+				<tr>
+					<td>101</td>
+					<td>Customer credit card provided for the transaction is blacklisted by the &quot;<em>Transaction 
+							Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>102</td>
+					<td>Customer IP provided for the transaction is blacklisted by the &quot;<em>Transaction 
+							Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>103</td>
+					<td>Customer email address provided for the transaction is blacklisted by the 
+						&quot;<em>Transaction Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>201</td>
+					<td>Customer credit card provided for the transaction exceeds the limits allowed by 
+						&quot;<em>Transaction Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>202</td>
+					<td>Customer IP provided for the transaction exceeds the limits allowed by &quot;<em>Transaction 
+							Control System</em>&quot;</td>
+				</tr>
+				<tr>
+					<td>203</td>
+					
+   <td>Customer email address provided for the transaction exceeds the limits 
+	allowed by &quot;<em>Transaction Control System</em>&quot;</td>
+				</tr>
+			</table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XXII"></a>
+			<p class="SectionTopic">Command - 122:<span>VoIP Box Details</span></p>
+			
+ <p class="article">Get the list of available VoIP hardware.</p>
+			
+ <p class="article"><span>VoIP box details</span> command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					
+   <td>voip_box_id</td>
+					<td>integer</td>
+					
+   <td>If provided a valid box id, only details of that VoIP box will be returned.</td>
+				</tr>
+			</table>
+			
+ <p class="article">System will respond with following data on the Output block 
+  of the XML document. If there are no VoIP boxes, output sub-node will be empty. 
+ </p>
+			<div class="sample">&lt;output&gt;<br />
+  &nbsp;&nbsp;&lt;voip_boxes&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;voip_box_id&gt;1&lt;/voip_box_id&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;name&gt;PAP2&lt;/name&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;price&gt;100.00&lt;/price&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;box details&lt;/description&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;detail_url&gt;&lt;/detail_url&gt;<br />
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;/node_0&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other VoIP boxs in node_1, node_2, ect.--&gt;</em><br />
+  &nbsp;&nbsp;&lt;/voip_boxes&gt;<br />
+				&lt;/output&gt;</div>
+			
+ <p class="article"><span>VoIP box details</span> doesn't have any error codes. 
+ </p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<p>&nbsp;</p>
+			<a name="toc04XXIII"></a>
+			<p class="SectionTopic">Command - 123:<span>Web Site Content</span></p>
+			
+ <p class="article">Get the content defined in the Agent MIS.</p>
+			
+ <p class="article"><span>Web site content</span> command takes in following parameters:</p>
+			<table class="param" cellspacing="3">
+				<tr>
+					<th>
+						Parameter</th>
+					<th>
+						Type</th>
+					<th>
+						Description</th>
+				</tr>
+				<colgroup>
+					<col id="param" />
+					<col id="type" />
+					<col id="desc" />
+				</colgroup>
+				<tr>
+					
+   <td>content_key</td>
+					
+   <td>string</td>
+					
+   <td>If provided a valid key, only content of that key will be returned.</td>
+				</tr>
+			</table>
+			
+ <p class="article">System will respond with following data on the Output block 
+  of the XML document. If there are no key/data, output sub-node will be empty. 
+ </p>
+			<div class="sample">&lt;output&gt;<br />
+  &nbsp;&nbsp;&lt;contents&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;key1&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;value&lt;/node_0&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other values in node_1, node_2, 
+  ect.--&gt;</em><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/key1&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;key2&gt;value&lt;/key2&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other keys --&gt;</em><br />
+  &nbsp;&nbsp;&lt;/contents&gt;<br />
+				&lt;/output&gt;</div>
+<p class="article">or (if key provided)</p>
+			<div class="sample">&lt;output&gt;<br />
+  &nbsp;&nbsp;&lt;key1&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;node_0&gt;value&lt;/node_0&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;<em>&lt;!-- other values in node_1, node_2, 
+  ect.--&gt;</em><br />
+  &nbsp;&nbsp;&lt;/key1&gt;<br />
+				&lt;/output&gt;</div>
+ <p class="article"><span>VoIP box details</span> doesn't have any error codes. 
+ </p>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+			<a name="toc05"></a>
+			
+ <p class="SectionTopic">Error Codes</p>
+			
+ <table class="command" cellspacing="3">
+  <tr> 
+   <th> Error Code</th>
+   <th> Description</th>
+  </tr>
+  <colgroup>
+  <col id="id" />
+  <col id="desc" />
+  </colgroup>
+  <tr> 
+   <td>2</td>
+   <td>Invalid &quot;<em>api_command</em>&quot; value.</td>
+  </tr>
+  <tr> 
+   <td>3</td>
+   <td>Technical failure</td>
+  </tr>
+  <tr> 
+   <td>4</td>
+   <td>Agent username/password invalid</td>
+  </tr>
+  <tr> 
+   <td>5</td>
+   <td>Agent does not have access to Agent API or command</td>
+  </tr>
+  <tr> 
+   <td>6</td>
+   <td>Required parameter is missing</td>
+  </tr>
+  <tr> 
+   <td>7</td>
+   <td>Invalid value (by type) passed to a parameter</td>
+  </tr>
+  <tr>
+   <td>8</td>
+   <td>Command specific failure. More details on the &quot;<em>output</em>&quot; 
+	section. </td>
+  </tr>
+ </table>
+			<div class="back_toc"><a href="#top_page">back</a></div>
+			<div class="seperator">&nbsp;</div>
+		</div>
+	</body>
+</html>
