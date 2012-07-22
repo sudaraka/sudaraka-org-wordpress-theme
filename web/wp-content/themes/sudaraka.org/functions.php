@@ -35,6 +35,14 @@ add_action('widgets_init', 'sudaraka_org_widgets_initialize');
 add_action('after_setup_theme', 'sudaraka_org_plugin_initialize');
 add_action('wp_enqueue_scripts', 'sudaraka_org_load_scripts');
 
+add_action('check_comment_flood', 'sudaraka_org_verify_comment_referer');
+add_filter('preprocess_comment', 'sudaraka_org_comment_post', '', 1);
+add_filter('comment_text', 'sudaraka_org_comment_display', '', 1);
+add_filter('comment_text_rss', 'sudaraka_org_comment_display', '', 1);
+add_filter('comment_excerpt', 'sudaraka_org_comment_display', '', 1);
+// This stops WordPress from trying to automatically make hyperlinks on text:
+remove_filter( 'comment_text', 'make_clickable', 9 );
+
 $taxonomy = sanitize_key($_REQUEST['taxonomy']);
 add_action($taxonomy . '_add_form_fields', 'sudaraka_org_taxonomy_add_fields');
 add_action('create_' . $taxonomy, 'sudaraka_org_taxonomy_save_fields');
@@ -365,3 +373,25 @@ function sudaraka_org_cateory_widget_filter($args) {
 //		return new Walker_Sudaraka_Org_Menu($target, $rel);
 //	}
 //}
+
+function sudaraka_org_verify_comment_referer()
+{
+	if(!wp_get_referer()) {
+		wp_die(__('Your web browser and/or firewall configuration prevents you from continuing this action.'));
+	}
+}
+
+function sudaraka_org_comment_post($args)
+{
+	$args['comment_content'] = htmlspecialchars($args['comment_content']);
+	$args['comment_content'] = str_replace('\'', '&apos;', $args['comment_content']);
+	
+	return $args;
+}
+
+function sudaraka_org_comment_display($comment_text)
+{
+	$comment_text = str_replace('&apos;', '\'', $comment_text);
+	
+	return $comment_text;
+}
