@@ -27,6 +27,11 @@ if(is_category()) {
 	$post_meta_description = $meta_data['description'];
 	$post_meta_keywords = $meta_data['keywords'];
 }
+elseif(is_tag()) {
+	
+	$post_meta_description = 'Articles written by Sydaraka Wijesinghe, tagged as ' . get_query_var('tag');
+	$post_meta_keywords = 'sudaraka,articles,tag,' . get_query_var('tag');
+}
 else {
 	$post_meta_description = get_post_meta($post->ID, 'description', true);
 	$post_meta_keywords = get_post_meta($post->ID, 'keywords', true);
@@ -35,7 +40,10 @@ else {
 $site_description = get_bloginfo( 'description', 'display' );
 if(!empty($site_description) && (is_home() || is_front_page())) $browser_title .= ' &mdash; ' . $site_description;
 
-if($paged>=2 || $page>=2) $browser_title .= ' &mdash; ' . sprintf(__( 'Page %s', 'sudaraka.org' ), max($paged, $page));
+if($paged>=2 || $page>=2) {
+	$browser_title .= ' &mdash; ' . sprintf(__( 'Page %s', 'sudaraka.org' ), max($paged, $page));
+	$post_meta_description .= sprintf(__( ' (page %s)', 'sudaraka.org' ), max($paged, $page));
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>

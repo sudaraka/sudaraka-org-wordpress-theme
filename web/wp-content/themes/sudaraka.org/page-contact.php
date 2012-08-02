@@ -23,6 +23,9 @@
 wp_enqueue_style('sudaraka_org_page');
 wp_enqueue_style('sudaraka_org_contact', get_template_directory_uri() . '/css/contact.css', null, null);
 
+wp_enqueue_script('sudaraka_org_js_gplusone', 'https://apis.google.com/js/plusone.js', null, null);
+wp_enqueue_script('sudaraka_org_js_addthis', 'http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fb29591223234b9', null, null);
+
 get_header();
 
 ?>

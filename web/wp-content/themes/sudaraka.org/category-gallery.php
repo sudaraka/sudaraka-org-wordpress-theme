@@ -25,7 +25,6 @@ wp_enqueue_script('sudaraka_org_colorbox');
 
 wp_enqueue_script('sudaraka_org_lazy_load');
 wp_enqueue_script('sudaraka_org_js_gallery', get_template_directory_uri() . '/js/category-gallery.js', null, null);
-wp_enqueue_script('sudaraka_org_js_addthis', 'http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fb29591223234b9', null, null);
 
 wp_enqueue_style('sudaraka_org_category', get_template_directory_uri() . '/css/category.css', null, null);
 wp_enqueue_style('sudaraka_org_gallery', get_template_directory_uri() . '/css/category-gallery.css', null, null);

@@ -30,6 +30,9 @@ wp_enqueue_style('sudaraka_org_resume_print', get_template_directory_uri() . '/c
 
 wp_enqueue_script('sudaraka_org_js_resume', get_template_directory_uri() . '/js/resume.js', null, null);
 
+wp_enqueue_script('sudaraka_org_js_gplusone', 'https://apis.google.com/js/plusone.js', null, null);
+wp_enqueue_script('sudaraka_org_js_addthis', 'http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fb29591223234b9', null, null);
+
 get_header();
 
 ?>
