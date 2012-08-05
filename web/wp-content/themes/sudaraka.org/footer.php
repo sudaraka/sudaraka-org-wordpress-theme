@@ -83,7 +83,7 @@
 						<a href="http://www.gnu.org/licenses/agpl.html" target="_blank">
 							<img src="<?php echo bloginfo('template_directory'); ?>/images/agplv3-88x31.png" alt="GNU AGPLv3 (or later)" />
 						</a>
-						<a href="feed/" target="_blank"><img src="<?php echo bloginfo('template_directory'); ?>/images/rss2-btn.png" alt="RSS 2.0 Feed" /></a>
+						<a href="/feed/" target="_blank"><img src="<?php echo bloginfo('template_directory'); ?>/images/rss2-btn.png" alt="RSS 2.0 Feed" /></a>
 						<a href="http://gmpg.org/xfn" target="_blank"><img src="<?php echo bloginfo('template_directory'); ?>/images/xfn-btn.gif" alt="XFN Friendly" /></a>
 						<a href="http://www.php.net/" target="_blank"><img src="<?php echo bloginfo('template_directory'); ?>/images/php-power-micro.png" alt="PHP: Hypertext Preprocessor" /></a>
 						<br />

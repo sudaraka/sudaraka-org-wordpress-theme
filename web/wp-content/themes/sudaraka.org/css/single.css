@@ -405,12 +405,6 @@
 	position: relative;
 }
 
-.addthis_toolbox {
-	position: absolute;
-	top: 0;
-	right: 1em;
-}
-
 .post-links {
 	background-color: #eee;
 	border: 1px solid #ddd;

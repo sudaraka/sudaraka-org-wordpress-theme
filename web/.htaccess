@@ -7,6 +7,12 @@ RewriteBase /
 RewriteRule ^n2s/?$ /category/note-to-self/ [R=302,L]
 RewriteRule ^n2s/(.*)$ /note-to-self/$1 [R=302,L]
 
+RewriteRule ^(gallery|web-framework|)/([^\/]*).*$ /category/$1/$2 [R=302,L]
+
+RewriteRule ^(about|sudaraka|author|sudaraka-?wijesinghe)$ /about-sudaraka-wijesinghe/ [R=302,L]
+
+RewriteRule ^terms-and-conditions /about-the-web-site/terms-and-conditions/ [R=302,L]
+
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -82,6 +82,7 @@ get_header();
 
 <?php
 
-get_sidebar('testimonials');
+//get_sidebar('testimonials');
+get_sidebar();
 
 get_footer();

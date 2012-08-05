@@ -32,10 +32,12 @@
 		
 		<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style ">
-		<a class="addthis_counter"></a>
+		<a class="addthis_counter addthis_pill_style"></a>
 		</div>
-		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fb29591223234b9"></script>
 		<!-- AddThis Button END -->
+		
+		<!-- Place this tag where you want the +1 button to render. -->
+		<div class="g-plusone"></div>
 
 	<?php if('post' == get_post_type()): ?>
 		<div class="article-meta">

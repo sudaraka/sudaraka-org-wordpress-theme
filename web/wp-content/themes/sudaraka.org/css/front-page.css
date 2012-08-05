@@ -270,7 +270,7 @@ body {
 
 #menu-icon-menu .menu-item {
 	/*float: left;*/
-	margin: 0 auto 1em;
+	margin: 0 auto .7em;
 	text-align: center;
 	text-indent: -9999px;
 }
@@ -278,6 +278,12 @@ body {
 #menu-icon-menu .menu-item a {
 	display: block;
 	margin: 0 auto;
+}
+
+#menu-icon-menu .ddg a {
+	background: transparent url(../../../uploads/ddg.png) no-repeat 0 0;
+	height: 32px;
+	width: 32px;
 }
 
 #menu-icon-menu .php a {

@@ -466,7 +466,7 @@ img {
 	color: #117799;
 	content: '<';
 	font-size: 1.5em;
-	font-styles: normal;
+	font-style: normal;
 	font-weight: bold;
 	position: absolute;
 	top: -.3em;
@@ -523,7 +523,7 @@ img {
 }
 
 #site-footer .no-post {
-	font: .6875em;
+	font-size: .6875em;
 	line-height: 1.5em;
 	margin: .5em 0;
 }
@@ -684,3 +684,11 @@ img {
 	padding: 1px;
 }
 
+
+.flattr_button,
+#___plusone_0,
+.addthis_toolbox {
+	clear: none !important;
+	float: left !important;
+	margin-right: 1em !important;
+}
